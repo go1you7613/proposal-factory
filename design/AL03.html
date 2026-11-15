@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280">
+<title>AL03 검색 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="js/lucide.min.js"></script>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/design.css"></head>
+<body data-screen="AL03">
+<div id="apphead"></div>
+<main>
+
+<h1>자료실 검색</h1><p class="sub">꼬리표와 낱말로 찾아요. 서버에서 의미 검색(질문 임베딩)은 하지 않아요.</p>
+<div class="filters"><select aria-label="평가항목"><option>평가항목: 장애관리</option></select><select aria-label="유형"><option>유형: 유지관리</option></select><select aria-label="결과"><option>결과: 수주 우선</option></select><input value="복구 시간" aria-label="낱말"><a class="btn btn--primary" href="AL03.html">찾기</a><a class="btn" href="AL03.html?state=preview">AI 작성 근거 미리보기</a></div>
+<div data-state="default"><div class="tw card" style="padding:0"><table><tr><th>조각</th><th>문서</th><th>꼬리표</th><th class="r">점수</th></tr>
+  <tr><td><a href="AL02.html">#p31-02 등급별 복구 시간 표</a></td><td>LIB-2025-014</td><td>장애관리, 결정값</td><td class="r">0.92</td></tr>
+  <tr><td><a href="AL02.html">#p22-01 장애 처리 흐름</a></td><td>LIB-2024-007</td><td>장애관리, 틀 L9</td><td class="r">0.81</td></tr>
+  <tr><td><a href="AL02.html">#p40-03 복구 시간 약속 문단</a></td><td>LIB-2025-003</td><td>장애관리</td><td class="r">0.66</td></tr></table></div></div>
+<div data-state="preview"><div class="card"><h2>AI 작성이 고를 근거 (절 3.3 장애 대응, 유지관리)</h2><ol style="padding-left:18px;margin:0">
+  <li>지식 카드 K-0012 장애 등급과 복구 시간 기준 <span class="muted">(확정 카드 먼저)</span></li><li>LIB-2025-014 #p31-02 <span class="muted">(같은 유형, 수주)</span></li><li>LIB-2024-007 #p22-01 <span class="muted">(틀 참고)</span></li></ol>
+  <p class="muted" style="font-size:12px">업체 화면에는 이 목록이 보이지 않아요. 원문 문장은 그대로 옮기지 않아요.</p></div></div>
+<div data-state="empty"><div class="empty"><i data-lucide="search-x"></i><b>결과가 없어요.</b><p class="muted">꼬리표를 줄여 봐 주세요.</p></div></div>
+</main>
+<script src="js/screens.js"></script><script src="js/features.js"></script><script src="js/data.js"></script><script src="js/common.js"></script>
+
+</body></html>

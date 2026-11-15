@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280">
+<title>UC04 내 계정 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="js/lucide.min.js"></script>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/design.css"></head>
+<body data-screen="UC04">
+<div id="apphead"></div>
+<main>
+
+<h1>내 계정</h1><p class="sub">원고와 PDF, RFP 원본 파일은 서버가 아니라 이 작업 폴더에 저장돼요. RFP 에서 뽑은 글자와 분석 결과는 서버에 보관해요.</p>
+<div class="grid g2">
+<div class="card"><h2>PC 작업 폴더</h2>
+  
+  <div data-state="none"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--check">연결 안 됨</span></dd></dl><p class="muted" style="font-size:13px">원고와 PDF 는 서버에 남기지 않고 내 PC 폴더에만 저장해요.</p><button class="btn btn--primary"><i data-lucide="folder-open"></i>폴더 선택</button>
+    <p class="muted" style="font-size:12px">폴더를 고르면 브라우저가 권한을 물어요. 처음 연결하면 업체자료/, 내 제안서/, 사업/ 을 만들어요.</p></div>
+  <div data-state="perm"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--check">권한 필요</span></dd></dl><button class="btn btn--primary"><i data-lucide="shield-check"></i>권한 허용</button></div>
+  <div data-state="perm"></div><template data-pop="perm" data-w="460"><h3 class="pop-ic"><i data-lucide="shield-alert"></i>폴더 권한을 다시 허용해 주세요</h3><p style="margin:0">브라우저를 다시 열면 권한을 다시 물어요.</p>
+  <div class="acts"><button class="btn" onclick="PF.pop(null)">닫기</button><button class="btn btn--primary" onclick="PF.pop(null)"><i data-lucide="shield-check"></i>권한 허용</button></div></template>
+  <div data-state="unsupported"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--check">폴더 저장 안 됨</span></dd></dl><p class="muted" style="font-size:13px;margin:0">이 브라우저는 폴더에 바로 저장할 수 없어 결과물은 내려받기로 저장돼요. 크롬이나 엣지를 쓰면 폴더에 바로 저장돼요.</p></div>
+  <div data-state="default pwerror"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--solid">연결됨</span></dd><dt>폴더</dt><dd>제안공방 작업 폴더 <span class="muted">(브라우저 안에만 기억, 서버에 보내지 않음)</span></dd></dl>
+    <pre class="card" style="background:var(--c-bg-subtle);margin:12px 0 0;font-size:12px">작업 폴더/
+├─ 업체자료/        인증서, 로고, 장표 원본
+├─ 내 제안서/
+│  └─ &lt;업체&gt;/       업체별 과거 제안서 (내 업체 정보에서 올림)
+└─ 사업/
+   └─ &lt;공고번호&gt;_&lt;사업명&gt;/
+      ├─ 00. 자료실/   01. RFP분석/   01. 제안서/   출력/</pre>
+    <button class="btn btn--sm" style="margin-top:8px"><i data-lucide="folder-sync"></i>다른 폴더로 바꾸기</button></div>
+</div>
+<div class="card"><h2>계정</h2><dl class="kv"><dt>아이디</dt><dd>sample01</dd><dt>업체</dt><dd>샘플정보(주) (더미)</dd><dt>이용 기간</dt><dd>2026-11-01 ~ 2027-01-31 (82일 남음)</dd></dl>
+  <h2>비밀번호 변경</h2>
+  <div class="row"><label>현재 비밀번호</label><input type="password" aria-describedby="pw-err"><p class="field-err" id="pw-err" data-state="pwerror">현재 비밀번호가 맞지 않아요.</p></div>
+  <div class="row"><label>새 비밀번호 (8자 이상)</label><input type="password"></div>
+  <div class="row"><label>새 비밀번호 확인</label><input type="password"></div>
+  <button class="btn btn--primary">변경</button></div>
+</div>
+</main>
+<script src="js/screens.js"></script><script src="js/features.js"></script><script src="js/data.js"></script><script src="js/common.js"></script>
+
+</body></html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280">
+<title>UC01 로그인 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="js/lucide.min.js"></script>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/design.css"></head>
+<body data-screen="UC01">
+<main>
+
+<div class="login card">
+  <!-- [디자인] 3D 그림 (D-117) --><img class="hero3d" src="assets/3d/technologist_3d_default.png" alt="">
+  <h1 style="text-align:center;margin-bottom:2px">제안공방</h1>
+  <p class="sub" style="text-align:center">공공 제안서 작성 시스템 (베타)</p>
+  <!-- [퍼블리싱] 알림 방식 (2026-11-15): 입력 오류는 입력칸 바로 아래 글자, 막힘(잠김, 만료, 정지)은 가운데 팝업. 위쪽 띠는 쓰지 않는다 -->
+  <div data-state="locked"></div><template data-pop="locked" data-w="460"><h3 class="pop-ic"><i data-lucide="lock"></i>로그인이 잠겼어요</h3><p style="margin:0">5번 실패해 10분 동안 잠겼어요.</p><p class="muted" style="margin:4px 0 0;font-size:13px">잠시 후 다시 시도해 주세요.</p>
+  <div class="acts"><button class="btn btn--primary" onclick="PF.pop(null)">확인</button></div></template>
+  <div data-state="expired"></div><template data-pop="expired" data-w="460"><h3 class="pop-ic"><i data-lucide="calendar-x"></i>이용 기간이 끝났어요</h3><p style="margin:0">종료일 2026-10-31</p><p class="muted" style="margin:4px 0 0;font-size:13px">관리자에게 문의해 주세요.</p>
+  <div class="acts"><button class="btn btn--primary" onclick="PF.pop(null)">확인</button></div></template>
+  <div data-state="suspended"></div><template data-pop="suspended" data-w="460"><h3 class="pop-ic"><i data-lucide="ban"></i>이용이 정지된 계정이에요</h3><p style="margin:0">관리자에게 문의해 주세요.</p>
+  <div class="acts"><button class="btn btn--primary" onclick="PF.pop(null)">확인</button></div></template>
+  <form onsubmit="location.href='UW01.html';return false">
+    <div class="row"><label for="uid">아이디</label><input id="uid" value="sample01" autocomplete="username"></div>
+    <div class="row"><label for="upw">비밀번호</label><input id="upw" type="password" value="********" autocomplete="current-password" aria-describedby="upw-err"><p class="field-err" id="upw-err" data-state="error">아이디 또는 비밀번호가 맞지 않아요. (실패 2회)</p></div>
+    <button class="btn btn--primary" style="width:100%;padding:10px;justify-content:center"><i data-lucide="log-in"></i>로그인</button>
+  </form>
+  <p class="muted" style="font-size:12px;margin:14px 0 0">계정은 관리자가 만들어 드려요. 회원가입, 비밀번호 찾기는 없어요.</p>
+  <p class="muted" style="font-size:12px;margin:6px 0 0">프로토타입 이동: <a href="UW01.html">사용자 첫 화면 (작업 목록)</a>, <a href="AC01.html">관리자 (관리자 계정 로그인)</a></p>
+</div>
+<div data-state="default error locked expired suspended"></div>
+</main>
+<script src="js/screens.js"></script><script src="js/features.js"></script><script src="js/data.js"></script><script src="js/common.js"></script>
+
+</body></html>

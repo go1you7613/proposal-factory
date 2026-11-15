@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280">
+<title>UW01 작업 목록 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="js/lucide.min.js"></script>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/design.css"></head>
+<body data-screen="UW01">
+<div id="apphead"></div>
+<main>
+
+<!-- [퍼블리싱] 로그인 직후 한 번만 뜨는 팝업 (2026-11-15). 위쪽 띠 대신 -->
+<div data-state="nofolder"></div><template data-pop="nofolder" data-w="460"><h3 class="pop-ic"><i data-lucide="folder-x"></i>작업 폴더를 연결해 주세요</h3><p style="margin:0">연결하면 원고와 PDF 를 내 PC 에 저장할 수 있어요.</p><p class="muted" style="margin:4px 0 0;font-size:13px">서버에는 원고와 PDF 를 남기지 않아요.</p>
+  <div class="acts"><button class="btn" onclick="PF.pop(null)">닫기</button><a class="btn btn--primary" href="UC04.html?state=none"><i data-lucide="folder-open"></i>작업 폴더 연결</a></div></template>
+<div data-state="expiring"></div><template data-pop="expiring" data-w="460"><h3 class="pop-ic"><i data-lucide="calendar-clock"></i>이용 기간이 12일 남았어요</h3><p style="margin:0">2026-11-24 까지 쓸 수 있어요.</p><p class="muted" style="margin:4px 0 0;font-size:13px">연장은 관리자에게 문의해 주세요.</p>
+  <div class="acts"><button class="btn btn--primary" onclick="PF.pop(null)">확인</button></div></template>
+<!-- [디자인] 환영 영역 + 3D 그림 (D-117). 숫자는 작업 목록 더미 기준 -->
+<div class="welcome"><div class="grow"><h2>김○○님, 오늘도 제안서를 함께 만들어요</h2><p>진행 중인 작업과 확인할 일을 한눈에 보여 드려요.</p>
+  <div class="wst"><div><b>4</b><small>진행 중 작업</small></div><div><b>8</b><small>확인 필요</small></div><div><b>D-17</b><small>가장 가까운 마감</small></div></div></div>
+  <img src="assets/3d/woman_office_worker_3d_default.png" alt=""></div>
+<div class="lhead"><h1 id="ltitle">전체</h1>
+  <div class="r"><select id="lsort" aria-label="정렬"><option value="lv">최근 본 순</option><option value="due">마감 순</option><option value="name">이름 순</option></select>
+  <a class="btn btn--primary" href="UW02.html"><i data-lucide="plus"></i>새 작업</a></div></div>
+<div id="lgrid" class="tgrid"></div>
+<div data-state="empty"><div class="empty"><img class="hero3d" src="assets/3d/card_file_box_3d.png" alt=""><b>아직 작업이 없어요.</b><p class="muted">RFP 를 올리면 분석부터 시작해요.</p><a class="btn btn--primary" href="UW02.html"><i data-lucide="plus"></i>새 작업</a></div></div>
+<div data-state="nosearch"><div class="empty"><i data-lucide="search-x"></i><b>찾는 작업이 없어요.</b><p class="muted">「위성 관제」 검색 결과 0건</p></div></div>
+<div data-state="newfolder"><div class="modal-bg show" id="nf"><div class="modal app-modal" role="dialog" aria-modal="true" aria-labelledby="nft">
+  <button class="x" aria-label="닫기" onclick="location.href='UW01.html'"><i data-lucide="x"></i></button>
+  <h3 id="nft">새 폴더</h3><p class="muted" style="margin-top:0">작업을 묶어 보는 목록 폴더예요. PC 작업 폴더와는 달라요. 한 단계만 만들 수 있어요.</p>
+  <div class="row"><label for="nfn">폴더 이름</label><input id="nfn" value="2027 하반기"></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end"><a class="btn" href="UW01.html">닫기</a><a class="btn btn--primary" href="UW01.html?state=folder">만들기</a></div></div></div></div>
+<div data-state="default archive folder acctmenu cardmenu"></div>
+</main>
+<script src="js/screens.js"></script><script src="js/features.js"></script><script src="js/data.js"></script><script src="js/common.js"></script>
+<script>
+
+const st = new URLSearchParams(location.search).get('state') || 'default';
+const esc = PF.esc;
+const scope = st === 'archive' ? 'archive' : st === 'folder' ? 'f1' : 'all';
+document.getElementById('ltitle').textContent = scope === 'archive' ? '보관함' : scope === 'f1' ? FOLDERS[0].name : '전체';
+function list() {
+  if (['empty', 'nosearch'].includes(st)) return [];
+  let a = PROJECTS.filter(p => {
+    const arc = p.arc || p.st === '중단';
+    return scope === 'archive' ? arc : scope === 'all' ? !arc : (!arc && p.f === scope);
+  });
+  const k = document.getElementById('lsort').value;
+  return a.sort((x, y) => k === 'name' ? x.name.localeCompare(y.name) : k === 'due' ? x.due.localeCompare(y.due) : x.lv - y.lv);
+}
+function cover(p) {   // 서버에 저장된 표지 썸네일 (프로토타입은 회색 목업)
+  return `<div class="cv"><div class="cb"><i></i><b>${esc(p.name.replace(' (더미)', ''))}</b></div>
+    <div class="cm"><i style="width:70%"></i><i style="width:55%"></i><i style="width:62%"></i></div>
+    <div class="cf"><span>${esc(p.org)}</span><span>${esc((p.co || '샘플정보(주) (더미)').replace(' (더미)', ''))}</span></div></div>`;
+}
+function info(p) {    // 표지가 아직 없을 때 정보 카드
+  return `<div class="ic"><span class="n">${p.dday || '-'}</span><span class="s">${esc(p.step)}</span>
+    <div class="bar"><i style="width:${p.pct}%"></i></div><span class="none">${esc((p.co || '샘플정보(주) (더미)').replace(' (더미)', ''))} · 진행률 ${p.pct}%</span></div>`;
+}
+function render() {
+  const a = list();
+  document.getElementById('lgrid').innerHTML = a.map((p, i) => {
+    const b = [p.dday && p.st === '진행 중' ? `<span class="dday">${p.dday}</span>` : '', p.st !== '진행 중' ? PF.st(p.st) : '', p.q ? `<span class="badge badge--check">확인 ${p.q}</span>` : ''].join('');
+    const arc = p.arc || p.st === '중단';
+    return `<div class="tcard${st === 'cardmenu' && i === 0 ? ' open' : ''}">
+      <a class="tthumb" href="UW08.html" aria-label="${esc(p.name)} 열기"><span class="tbadges">${b}</span>${p.thumb ? cover(p) : info(p)}</a>
+      <div class="tmeta"><div class="tx"><a href="UW08.html">${esc(p.name)}</a><small>최근 작업 ${p.last}</small></div>
+        <button class="more" type="button" aria-label="작업 메뉴" onclick="this.closest('.tcard').classList.toggle('open');event.stopPropagation()"><i data-lucide="ellipsis"></i></button>
+        <div class="cmenu" role="menu"><a href="UW08.html?state=info" role="menuitem"><i data-lucide="pencil"></i>정보 수정</a>
+          <a href="UW01.html?state=folder" role="menuitem"><i data-lucide="folder-input"></i>폴더로 이동</a>
+          <a href="UW01.html${arc ? '' : '?state=archive'}" role="menuitem"><i data-lucide="${arc ? 'archive-restore' : 'archive'}"></i>${arc ? '꺼내기' : '보관하기'}</a></div></div></div>`;
+  }).join('');
+  PF.icons();
+}
+document.getElementById('lsort').onchange = render;
+document.addEventListener('click', e => { if (!e.target.closest('.tcard')) document.querySelectorAll('.tcard.open').forEach(c => c.classList.remove('open')); });
+render();
+
+</script>
+</body></html>

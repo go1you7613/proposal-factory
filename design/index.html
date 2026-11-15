@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280">
+<title>제안공방 프로토타입 화면 목록</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="js/lucide.min.js"></script>
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/design.css">
+<style>
+.top{background:var(--c-bg);border-bottom:2px solid var(--c-ink);padding:22px 16px}
+.top .in{max-width:1180px;margin:0 auto}
+.top h1{font-size:22px}.top p{margin:4px 0 0;color:var(--c-muted);font-size:13px}
+.sysd{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap}
+.sysd p{margin:0;flex:1 1 420px}
+</style></head>
+<body>
+<div class="top"><div class="in">
+  <h1>제안공방 프로토타입</h1>
+  <p>공통 + 제안공방 + 자료실, 지식 카드 (관리자) (1차 범위), 화면 <span id="scnt"></span>개, 기능 <span id="fcnt"></span>개. 기준 문서: 제안공장 기능정의서 v0.1, IA v0.1 (2026-11-15 기준 프로토타입이 앞섬)</p>
+</div></div>
+<main>
+  <div class="tabs" id="tabs"></div>
+  <div id="panel"></div>
+  <div class="card" style="margin-top:20px">
+    <b>이용 안내</b>
+    <ul style="margin:6px 0 0;padding-left:18px">
+      <li>화면 맨 위 안내 바(검은 굵은 선)의 「화면 목록」은 그 화면이 속한 탭으로 돌아옵니다.</li>
+      <li>「기능설명」은 기능정의서 3, 4장에서 자동으로 뽑은 기능 표를 팝업으로 보여 줍니다.</li>
+      <li>「상태 보기」는 같은 화면의 다른 상태(빈 목록, 오류 등)로 바로 이동합니다.</li>
+      <li>샘플 데이터는 모두 더미입니다 (사용자 화면은 「샘플정보(주) (더미)」로 로그인한 상태).</li>
+      <li>공고레이더 화면은 2차 범위라 이 목록에 없습니다 (별도 프로토타입).</li>
+    </ul>
+  </div>
+</main>
+<script src="js/screens.js"></script><script src="js/features.js"></script><script src="js/data.js"></script><script src="js/common.js"></script>
+<script>
+(function () {
+  const esc = PF.esc;
+  document.getElementById('fcnt').textContent = FEATURES.length; document.getElementById('scnt').textContent = SCREENS.length;
+  const qs = new URLSearchParams(location.search);
+  const tq = qs.get('tab'); const byTab = Object.values(SYSTEMS).find(x => x.tab === tq); let cur = byTab ? byTab.key : 'U';
+  function render() {
+    document.getElementById('tabs').innerHTML = Object.values(SYSTEMS).map(s => {
+      const n = SCREENS.filter(x => x.sys === s.key).length;
+      return `<button class="${s.key === cur ? 'on' : ''}" onclick="go('${s.key}')">${s.tab} ${esc(s.name)} (${n})</button>`;
+    }).join('');
+    const sys = SYSTEMS[cur];
+    const list = SCREENS.filter(x => x.sys === cur);
+    const rows = list.map(s => {
+      const fc = FEATURES.filter(f => f.screen === s.id).length;
+      const st = s.states.map(([k, l]) => `<a class="btn btn--sm" href="${s.file}?state=${k}">${esc(l)}</a>`).join(' ');
+      return `<tr><td class="nowrap"><b>${s.id}</b></td><td class="nowrap">${esc(s.menu)}</td>
+        <td><a href="${s.file}"><b>${esc(s.name)}</b></a><div class="muted">${esc(s.desc)}</div></td>
+        <td><div class="chips">${st}</div></td>
+        <td class="nowrap"><button class="btn btn--sm btn--primary" onclick="PF.openFeature('${s.id}')"><i data-lucide="info"></i>기능설명 (${fc})</button></td></tr>`;
+    }).join('');
+    const first = SCREENS.find(x => x.id === sys.first);
+    document.getElementById('panel').innerHTML = `
+      <div class="card sysd"><p><b>${sys.tab} ${esc(sys.name)}</b><br>${esc(sys.desc)}</p>
+        <a class="btn btn--primary" href="${first.file}"><i data-lucide="play"></i>첫 화면부터 보기</a></div>
+      <div class="tw card" style="padding:0"><table>
+        <tr><th>화면 ID</th><th>메뉴</th><th>화면 이름과 한 줄 설명</th><th>상태 보기</th><th>기능설명</th></tr>${rows}</table></div>`;
+  }
+  window.go = k => { cur = k; history.replaceState(null, '', '?tab=' + SYSTEMS[k].tab); render(); PF.icons(); };
+  render();
+})();
+</script>
+</body></html>
