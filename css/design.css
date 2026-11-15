@@ -169,3 +169,6 @@ body[data-screen="UC01"] .login{margin:0;width:420px;max-width:420px;padding:32p
 .pstep span.on{background:var(--c-primary);color:#fff;}
 .pstep span.done{color:var(--c-success-ink);}
 .pstep span.done svg{color:var(--c-success);}
+
+/* 사업 바 단계 사이 화살표: 바탕과 대비가 낮아 안 보이던 것 보정 (2026-11-15) */
+.pstep svg.sep,.pstep .sep{color:var(--c-muted);opacity:1;}
