@@ -3,7 +3,7 @@
 <title>UW08 제안서 작성 (편집기) - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="js/lucide.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=202611161500"><link rel="stylesheet" href="css/design.css?v=202611161500"></head>
+<link rel="stylesheet" href="css/style.css?v=202611161545"><link rel="stylesheet" href="css/design.css?v=202611161545"></head>
 <body data-screen="UW08">
 <div id="apphead"></div>
 <main>
@@ -55,12 +55,12 @@
 <div class="pane"><div class="ptabs"><button data-tg="R" data-tk="pr" class="on" onclick="PF.tab('R','pr')">속성</button><button data-tg="R" data-tk="ai" onclick="PF.tab('R','ai')">AI</button><button data-tg="R" data-tk="ev" onclick="PF.tab('R','ev')">근거</button><button data-tg="R" data-tk="al" onclick="PF.tab('R','al')">알림 <b>3</b></button></div>
  <div class="pin" data-tp="R" data-tk="pr"><b>선택: 표 칸</b><dl class="kv2" style="margin-top:8px"><dt>페이지</dt><dd>3.3 · 2/6 (표 중심)</dd><dt>구역</dt><dd>본문 (부품 허용)</dd><dt>글자</dt><dd>표 글자 9.5pt 보통 <a href="#" onclick="PF.fmt('edit','editor');return false">문서 서식</a></dd><dt>요구사항</dt><dd>SER-002, SER-003</dd><dt>평가 요소</dt><dd>장애 대응</dd></dl>
    <!-- [퍼블리싱] 속성 탭 (기능정의서 UW08-07, UW08-23): 원고에서 누른 요소의 속성. 아무것도 안 고르면 지금 페이지. 요소 종류마다 아래 「바꿀 수 있는 것」이 달라진다 -->
-   <h3 style="font-size:14px;margin:14px 0 6px">표 칸 <span class="muted" style="font-weight:400">2행 · 3열</span></h3>
+   <h3 class="psec">표 칸 <span class="muted" style="font-weight:400">2행 · 3열</span></h3>
    <div style="display:flex;flex-wrap:wrap;gap:6px"><button class="btn btn--sm" aria-pressed="false"><i data-lucide="bold"></i>강조</button><button class="btn btn--sm"><i data-lucide="between-horizontal-end"></i>행 추가</button><button class="btn btn--sm"><i data-lucide="trash-2"></i>행 삭제</button></div>
-   <h3 style="font-size:14px;margin:14px 0 6px">표 <span class="muted" style="font-weight:400">3행 · 3열</span></h3>
+   <h3 class="psec">표 <span class="muted" style="font-weight:400">3행 · 3열</span></h3>
    <div class="row" style="margin:0 0 6px"><label style="font-size:13px">열 너비</label><select aria-label="열 너비"><option>균등</option><option>첫 열 좁게</option><option>첫 열 넓게</option></select></div>
-   <label style="font-size:13px"><input type="checkbox" checked> 머리 행</label>
-   <p class="muted" style="font-size:12px;margin:10px 0 0">글꼴, 글자 크기, 두께는 요소마다가 아니라 「문서 서식」에서 역할별로 정하고 모든 페이지에 적용돼요 (테마가 정한 범위 안). 색, 여백, 배치는 테마가 정해요.</p>
+   <label class="pchk" style="font-size:13px"><input type="checkbox" checked> 머리 행</label>
+   <p class="muted psec-note" style="font-size:12px;margin:10px 0 0">글꼴, 글자 크기, 두께는 요소마다가 아니라 「문서 서식」에서 역할별로 정하고 모든 페이지에 적용돼요 (테마가 정한 범위 안). 색, 여백, 배치는 테마가 정해요.</p>
 </div>
  <div class="pin" data-tp="R" data-tk="ai" hidden><div class="chat">
    <div class="q">1등급 복구 시간 근거를 한 줄로 덧붙여 줘</div>
@@ -102,7 +102,7 @@
   <h3 id="lmt">작업 현황</h3><p class="muted" style="margin:0 0 12px">절마다 계획 페이지 수와 지금 쓴 페이지 수, 상태를 보여 줘요.</p>
   <div class="tw" style="max-height:60vh;overflow:auto"><table id="sec-t"></table></div></div></div>
 </main>
-<script src="js/screens.js?v=202611161500"></script><script src="js/features.js?v=202611161500"></script><script src="js/data.js?v=202611161500"></script><script src="js/common.js?v=202611161500"></script>
+<script src="js/screens.js?v=202611161545"></script><script src="js/features.js?v=202611161545"></script><script src="js/data.js?v=202611161545"></script><script src="js/common.js?v=202611161545"></script>
 <script>
 
 const st = new URLSearchParams(location.search).get('state') || 'default';
