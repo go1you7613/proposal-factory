@@ -309,10 +309,17 @@
   const g = document.createElement('div');
   g.className = 'guide';
   g.innerHTML = `<span class="gid">${esc(s.id)}</span><span class="gname">${esc(s.name)}</span>
-    <span class="gsys">${esc(sys.tab)} ${esc(sys.name)}</span><span class="gdesc">${esc(s.desc)}</span>
+    <span class="gsys">${esc(sys.tab)} ${esc(sys.name)}</span><span class="gtip"><button type="button" class="ginfo" aria-label="화면 설명 보기" aria-expanded="false"><i data-lucide="info"></i></button><span class="gdesc" role="tooltip">${esc(s.desc)}</span></span><span class="grow"></span>
     <span class="gbtn"><a class="btn btn--sm" href="index.html?tab=${sys.tab}"><i data-lucide="layout-list"></i>화면 목록</a>
     <button class="btn btn--sm btn--primary" onclick="PF.openFeature('${s.id}')"><i data-lucide="info"></i>기능설명</button></span>`;
   if (!embed) document.body.prepend(g);
+  // 화면 설명 말풍선 (2026-11-16 디자인): i 아이콘을 누르면 열고, 다시 누르거나 바깥을 누르면 닫음
+  const tip = g.querySelector('.gtip'), tipBtn = g.querySelector('.ginfo');
+  if (tip && tipBtn) {
+    tipBtn.addEventListener('click', e => { e.stopPropagation(); const o = tip.classList.toggle('open'); tipBtn.setAttribute('aria-expanded', o); });
+    document.addEventListener('click', e => { if (!tip.contains(e.target)) { tip.classList.remove('open'); tipBtn.setAttribute('aria-expanded', 'false'); } });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { tip.classList.remove('open'); tipBtn.setAttribute('aria-expanded', 'false'); } });
+  }
 
   // ③ 앱 머리글 (로그인 화면 제외)
   //   사업 밖 사용자 화면(s.side) = 좌측 영역 (D-086), 사업 안 화면과 관리자 = 상단 머리글
