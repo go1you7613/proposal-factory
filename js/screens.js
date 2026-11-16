@@ -19,7 +19,7 @@ window.STAGES = ['준비', '제안서 작성', '마무리'];
 window.PANELS = [
   ['rfp', 'UW04', 'RFP 분석', 'file-search'],
   ['toc', 'UW06', '목차', 'list-tree'],
-  ['ask', 'UW10', '업체 확인사항', 'message-circle-question'],
+  ['ask', 'UW10', '업체 확인사항', 'building-2'],
   ['check', 'UW09', '검사 결과', 'shield-check'],
   ['info', '', '사업 정보', 'info']
 ];

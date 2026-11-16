@@ -350,3 +350,23 @@ input:not([type=checkbox]):not([type=radio]):focus,textarea:focus,select:focus{b
 #nf .nf-in::placeholder{color:#C4C4C4;}
 #nf .nf-act{display:flex;justify-content:flex-end;}
 #nf .nf-act .btn{height:30px;line-height:30px;padding:0 10px;font-size:var(--fs-12);border-radius:8px;box-shadow:none;}
+
+/* ── 작업창 (UW03, UW08) 2026-11-16 ── */
+/* 유틸바: 아이콘 색, 크기 통일 */
+.vrail button svg{width:18px;height:18px;color:#222222;stroke-width:2;}
+/* 유틸바 숫자: 파란 정원, 작은 숫자 */
+.vrail .n,.vrail button.on .n,.rail .n,.rail button.on .n{display:flex;align-items:center;justify-content:center;width:16px;height:16px;min-width:0;padding:0;border-radius:50%;background:#0091EA;color:#FFFFFF;font-size:10px;line-height:1;top:6px;right:12px;}
+/* 사업명: 둥근 테두리 칩 (Framer Canvas 칩 형식) */
+.ed .projhd .pj{width:auto;max-width:100%;height:32px;padding:0 10px;gap:6px;border:1px solid #E8E8E8;border-radius:8px;background:#FFFFFF;font-size:14px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+.ed .projhd .pj b{font-weight:600;}
+.ed .projhd .pj svg{width:12px;height:12px;color:#222222;}
+.ed .projhd .pj:hover,.ed .projhd.open .pj{background:#F3F3F3;}
+/* 페이지, 템플릿, 에셋 탭: 회색 알약 (밑줄 없음) */
+.ed .projhd + .ptabs{gap:4px;padding:8px 10px;border-bottom:1px solid #E8E8E8;}
+.ed .projhd + .ptabs button{flex:none;height:28px;padding:0 10px;border:0;border-radius:8px;background:none;font-size:13px;font-weight:400;color:#999999;}
+.ed .projhd + .ptabs button:hover{color:#222222;}
+.ed .projhd + .ptabs button.on{background:#F3F3F3;color:#222222;font-weight:500;border:0;}
+/* 페이지 목록: 큰 종이 그림 → 작은 종이 아이콘 (왼쪽 메뉴 폴더 아이콘 형식) */
+.ptree li.p{gap:11px;height:30px;padding:0 4px 0 28px;font-size:13px;}
+.ptree li.p svg{width:12px;height:12px;color:#222222;flex:none;}
+.vrail .n,.vrail button.on .n{right:auto;left:calc(50% + 5px);top:3px;}
