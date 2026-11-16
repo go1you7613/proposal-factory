@@ -101,7 +101,7 @@
   };
   // 크기 버튼: 보통 창이면 「크게 보기」, 크게 보기 상태면 「작게 보기」
   const sizeBtn = () => { const d = $('#drw'), b = $('#drw-size'); if (!d || !b) return; const big = d.classList.contains('big');
-    b.innerHTML = big ? '<i data-lucide="minimize-2"></i>작게 보기' : '<i data-lucide="maximize-2"></i>크게 보기'; b.setAttribute('aria-pressed', big); };
+    b.innerHTML = big ? '<i data-lucide="minimize-2"></i>' : '<i data-lucide="maximize-2"></i>'; b.setAttribute('aria-label', big ? '작게 보기' : '크게 보기'); b.title = big ? '작게 보기' : '크게 보기'; b.setAttribute('aria-pressed', big); };   // 2026-11-16 디자인: 글자 없이 아이콘만
   PF.drawerBig = () => { const d = $('#drw'); if (d) { d.classList.toggle('big'); sizeBtn(); PF.icons(); } };
   // 맨 위 프로토타입 창 (자료 창 iframe 안에서 불러도 화면 전체에 띄우기 위해). claude.ai 바깥 창은 접근하지 않는다
   const topWin = () => { let w = window, best = window; try { while (w.parent && w.parent !== w) { w = w.parent; if (w.PF && w.document.body && w.document.body.dataset.screen) best = w; } } catch (e) {} return best; };
