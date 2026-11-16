@@ -267,3 +267,8 @@ body[data-screen="UW01"],body[data-screen="UW01"] .shell,body[data-screen="UW01"
 .lhead .btn svg{width:12px;height:12px;}
 .lhead select{-webkit-appearance:none;appearance:none;padding:0 32px 0 10px;
   background:#F2F2F2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23222222' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center / 12px 12px;}
+
+/* UW01 간격 조정 (2026-11-16): 환영 영역과 「전체」 사이 24 → 48px, 카드와 글자 사이 12 → 16px, 글자 두 줄 사이 4px 추가 */
+.welcome{margin-bottom:48px;}
+.tmeta{margin-top:16px;}
+.tmeta .tx small{margin-top:4px;}
