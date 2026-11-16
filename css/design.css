@@ -521,6 +521,12 @@ button[aria-label="닫기"] svg,.modal .x svg,.jobnote .x svg,.drw-h #drw-size s
 .drw-h #drw-size:hover,.drw-h button[aria-label="닫기"]:hover{background:#F3F3F3 !important;}
 .drw-h #drw-size + button[aria-label="닫기"]{margin-left:0 !important;}   /* 두 버튼 사이 8px (되돌리기, 다시 사이와 같음) */
 
+/* UC01 로그인: 3D 그림 없음, 제목 크게(24px), 부제 진하게(#666) 제목에 붙임, 버튼 높이 = 입력칸 높이 41px */
+.login-t{text-align:center;font-size:24px !important;font-weight:700 !important;margin:0 0 4px;}
+.login-s{text-align:center;color:#666666 !important;margin:0 0 24px;}
+.btn.login-b{width:100%;height:41px;justify-content:center;font-size:14px;}
+.login-n{font-size:13px;color:#999999;line-height:1.6;}   /* 설명 문구 규격: 13px #999, 줄 간격 1.6 */
+
 /* 하위 탭 (UC03 기본, 인증 등): 왼쪽 메뉴 항목 형식 (아이콘 없음)
    안 고름: 흰 바탕 + 테두리 #EEEEEE / 고름: 바탕 #F3F3F3, 굵게. 높이 30px, 둥글기 8px, 글자 13px
    숫자: 작업 목록 숫자처럼 11px #999, 테두리 없음 */

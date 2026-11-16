@@ -3,14 +3,13 @@
 <title>UC01 로그인 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="js/lucide.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=202611161643"><link rel="stylesheet" href="css/design.css?v=202611161643"></head>
+<link rel="stylesheet" href="css/style.css?v=202611161647"><link rel="stylesheet" href="css/design.css?v=202611161647"></head>
 <body data-screen="UC01">
 <main>
 
 <div class="login card">
-  <!-- [디자인] 3D 그림 (D-117) --><img class="hero3d" src="assets/3d/technologist_3d_default.png" alt="">
-  <h1 style="text-align:center;margin-bottom:2px">제안공방</h1>
-  <p class="sub" style="text-align:center">공공 제안서 작성 시스템 (베타)</p>
+  <h1 class="login-t">제안공방</h1>
+  <p class="sub login-s">공공 제안서 작성 시스템 (베타)</p>
   <!-- [퍼블리싱] 알림 방식 (2026-11-15): 입력 오류는 입력칸 바로 아래 글자, 막힘(잠김, 만료, 정지)은 가운데 팝업. 위쪽 띠는 쓰지 않는다 -->
   <div data-state="locked"></div><template data-pop="locked" data-w="460"><h3 class="pop-ic"><i data-lucide="lock"></i>로그인이 잠겼어요</h3><p style="margin:0">5번 실패해 10분 동안 잠겼어요.</p><p class="muted" style="margin:4px 0 0;font-size:14px">잠시 후 다시 시도해 주세요.</p>
   <div class="acts"><button class="btn btn--primary" onclick="PF.pop(null)">확인</button></div></template>
@@ -21,13 +20,13 @@
   <form onsubmit="location.href='UW01.html';return false">
     <div class="row"><input id="uid" placeholder="아이디" aria-label="아이디" autocomplete="username"></div>
     <div class="row"><input id="upw" type="password" placeholder="비밀번호" aria-label="비밀번호" autocomplete="current-password" aria-describedby="upw-err"><p class="field-err" id="upw-err" data-state="error">아이디 또는 비밀번호가 맞지 않아요. (실패 2회)</p></div>
-    <button class="btn btn--primary" style="width:100%;padding:10px;justify-content:center"><i data-lucide="log-in"></i>로그인</button>
+    <button class="btn btn--primary login-b"><i data-lucide="log-in"></i>로그인</button>
   </form>
-  <p class="muted" style="font-size:13px;margin:14px 0 0">계정은 관리자가 만들어 드려요. 회원가입, 비밀번호 찾기는 없어요.</p>
-  <p class="muted" style="font-size:13px;margin:6px 0 0">프로토타입 이동: <a href="UW01.html">사용자 첫 화면 (작업 목록)</a>, <a href="AC01.html">관리자 (관리자 계정 로그인)</a></p>
+  <p class="muted login-n" style="margin:14px 0 0">계정은 관리자가 만들어 드려요. 회원가입, 비밀번호 찾기는 없어요.</p>
+  <p class="muted login-n" style="margin:6px 0 0">프로토타입 이동: <a href="UW01.html">사용자 첫 화면 (작업 목록)</a>, <a href="AC01.html">관리자 (관리자 계정 로그인)</a></p>
 </div>
 <div data-state="default error locked expired suspended"></div>
 </main>
-<script src="js/screens.js?v=202611161643"></script><script src="js/features.js?v=202611161643"></script><script src="js/data.js?v=202611161643"></script><script src="js/common.js?v=202611161643"></script>
+<script src="js/screens.js?v=202611161647"></script><script src="js/features.js?v=202611161647"></script><script src="js/data.js?v=202611161647"></script><script src="js/common.js?v=202611161647"></script>
 
 </body></html>
