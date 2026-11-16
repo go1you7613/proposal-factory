@@ -422,3 +422,20 @@
   if (pt) setTimeout(() => PF.pop(pt.innerHTML, pt.dataset.w), 0);
   if (qs.get('fx') === '1') PF.openFeature(id);
 })();
+
+// [퍼블리싱] 스크롤 막대 표시 (디자인 시안 2026-11-16): 마우스가 올라간 스크롤 영역에만 sb-on 을 붙여 가는 막대를 보인다
+(() => {
+  const on = new Set();
+  const scrollable = el => el === document.documentElement ? el.scrollHeight > el.clientHeight + 1
+    : el.scrollHeight > el.clientHeight + 1 && /(auto|scroll)/.test(getComputedStyle(el).overflowY)
+      || el.scrollWidth > el.clientWidth + 1 && /(auto|scroll)/.test(getComputedStyle(el).overflowX);
+  const mark = t => {
+    const now = new Set();
+    for (let el = t; el && el.nodeType === 1; el = el.parentElement) if (scrollable(el)) now.add(el);
+    on.forEach(el => { if (!now.has(el)) { el.classList.remove('sb-on'); on.delete(el); } });
+    now.forEach(el => { if (!on.has(el)) { el.classList.add('sb-on'); on.add(el); } });
+  };
+  document.addEventListener('mouseover', e => mark(e.target), { passive: true });
+  document.addEventListener('scroll', e => mark(e.target === document ? document.documentElement : e.target), { capture: true, passive: true });
+  document.documentElement.addEventListener('mouseleave', () => { on.forEach(el => el.classList.remove('sb-on')); on.clear(); });
+})();

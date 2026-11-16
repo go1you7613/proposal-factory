@@ -405,3 +405,16 @@ input[type=checkbox]:checked{border-color:#00A1FF;background:#00A1FF url("data:i
 input[type=checkbox]:focus-visible{outline:2px solid #C9C9C9;outline-offset:1px;}
 .pchk{display:inline-flex;align-items:center;gap:2px;}
 .ed .pane:last-child > .ptabs button.on{background:#F3F3F3;color:#222222;font-weight:500;}
+
+/* 스크롤 막대 (2026-11-16): 평소엔 안 보이고, 마우스를 올리면 가는 회색 막대만 (화살표, 바탕 없음)
+   크롬은 :hover 로는 막대를 다시 그리지 않아서 클래스(sb-on)로 켠다 */
+::-webkit-scrollbar{width:6px;height:6px;background:transparent;}
+::-webkit-scrollbar-track,::-webkit-scrollbar-corner{background:transparent;}
+::-webkit-scrollbar-button{display:none;width:0;height:0;}
+::-webkit-scrollbar-thumb{background:transparent;border-radius:999px;}
+.sb-on::-webkit-scrollbar-thumb{background:rgba(0,0,0,.18);}   /* 마우스가 올라간 스크롤 영역에만 (common.js 가 sb-on 붙임) */
+::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.32);}
+@supports (-moz-appearance:none){   /* Firefox 전용 */
+  *{scrollbar-width:thin;scrollbar-color:transparent transparent;}
+  .sb-on{scrollbar-color:rgba(0,0,0,.18) transparent;}
+}
