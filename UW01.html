@@ -3,7 +3,7 @@
 <title>UW01 작업 목록 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="js/lucide.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=202611161416"><link rel="stylesheet" href="css/design.css?v=202611161416"></head>
+<link rel="stylesheet" href="css/style.css?v=202611161418"><link rel="stylesheet" href="css/design.css?v=202611161418"></head>
 <body data-screen="UW01">
 <div id="apphead"></div>
 <main>
@@ -30,7 +30,7 @@
   <div style="display:flex;gap:8px;justify-content:flex-end"><a class="btn" href="UW01.html">닫기</a><a class="btn btn--primary" href="UW01.html?state=folder">만들기</a></div></div></div></div>
 <div data-state="default archive folder acctmenu cardmenu"></div>
 </main>
-<script src="js/screens.js?v=202611161416"></script><script src="js/features.js?v=202611161416"></script><script src="js/data.js?v=202611161416"></script><script src="js/common.js?v=202611161416"></script>
+<script src="js/screens.js?v=202611161418"></script><script src="js/features.js?v=202611161418"></script><script src="js/data.js?v=202611161418"></script><script src="js/common.js?v=202611161418"></script>
 <script>
 
 const st = new URLSearchParams(location.search).get('state') || 'default';
@@ -58,10 +58,10 @@ function info(p) {    // 표지가 아직 없을 때 정보 카드
 function render() {
   const a = list();
   document.getElementById('lgrid').innerHTML = a.map((p, i) => {
-    const b = [p.dday && p.st === '진행 중' ? `<span class="dday">${p.dday}</span>` : '', p.st !== '진행 중' ? PF.st(p.st) : '', p.q ? `<span class="badge badge--check">확인 ${p.q}</span>` : ''].join('');
+    const b = [p.dday && p.st === '진행 중' ? `<span class="dday">${p.dday}</span>` : '', p.st === '제출 완료' ? '' : (p.st !== '진행 중' ? PF.st(p.st) : ''), p.q ? `<span class="badge badge--check">확인 ${p.q}</span>` : ''].join('');
     const arc = p.arc || p.st === '중단';
     return `<div class="tcard${st === 'cardmenu' && i === 0 ? ' open' : ''}">
-      <a class="tthumb" href="UW08.html" aria-label="${esc(p.name)} 열기"><span class="tbadges">${b}</span>${p.thumb ? cover(p) : info(p)}</a>
+      <a class="tthumb" href="UW08.html" aria-label="${esc(p.name)} 열기"><span class="tbadges">${b}</span>${p.st === '제출 완료' ? '<span class="tdone" title="제출 완료" aria-label="제출 완료"><i data-lucide="circle-check"></i></span>' : ''}${p.thumb ? cover(p) : info(p)}</a>
       <div class="tmeta"><div class="tx"><a href="UW08.html">${esc(p.name)}</a><small>최근 작업 ${p.last}</small></div>
         <button class="more" type="button" aria-label="작업 메뉴" onclick="this.closest('.tcard').classList.toggle('open');event.stopPropagation()"><i data-lucide="ellipsis"></i></button>
         <div class="cmenu" role="menu"><a href="UW08.html?state=info" role="menuitem"><i data-lucide="pencil"></i>정보 수정</a>
