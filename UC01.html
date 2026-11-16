@@ -3,7 +3,7 @@
 <title>UC01 로그인 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="js/lucide.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=202611161625"><link rel="stylesheet" href="css/design.css?v=202611161625"></head>
+<link rel="stylesheet" href="css/style.css?v=202611161628"><link rel="stylesheet" href="css/design.css?v=202611161628"></head>
 <body data-screen="UC01">
 <main>
 
@@ -19,8 +19,8 @@
   <div data-state="suspended"></div><template data-pop="suspended" data-w="460"><h3 class="pop-ic"><i data-lucide="ban"></i>이용이 정지된 계정이에요</h3><p style="margin:0">관리자에게 문의해 주세요.</p>
   <div class="acts"><button class="btn btn--primary" onclick="PF.pop(null)">확인</button></div></template>
   <form onsubmit="location.href='UW01.html';return false">
-    <div class="row"><label for="uid">아이디</label><input id="uid" value="sample01" autocomplete="username"></div>
-    <div class="row"><label for="upw">비밀번호</label><input id="upw" type="password" value="********" autocomplete="current-password" aria-describedby="upw-err"><p class="field-err" id="upw-err" data-state="error">아이디 또는 비밀번호가 맞지 않아요. (실패 2회)</p></div>
+    <div class="row"><input id="uid" placeholder="아이디" aria-label="아이디" autocomplete="username"></div>
+    <div class="row"><input id="upw" type="password" placeholder="비밀번호" aria-label="비밀번호" autocomplete="current-password" aria-describedby="upw-err"><p class="field-err" id="upw-err" data-state="error">아이디 또는 비밀번호가 맞지 않아요. (실패 2회)</p></div>
     <button class="btn btn--primary" style="width:100%;padding:10px;justify-content:center"><i data-lucide="log-in"></i>로그인</button>
   </form>
   <p class="muted" style="font-size:13px;margin:14px 0 0">계정은 관리자가 만들어 드려요. 회원가입, 비밀번호 찾기는 없어요.</p>
@@ -28,6 +28,6 @@
 </div>
 <div data-state="default error locked expired suspended"></div>
 </main>
-<script src="js/screens.js?v=202611161625"></script><script src="js/features.js?v=202611161625"></script><script src="js/data.js?v=202611161625"></script><script src="js/common.js?v=202611161625"></script>
+<script src="js/screens.js?v=202611161628"></script><script src="js/features.js?v=202611161628"></script><script src="js/data.js?v=202611161628"></script><script src="js/common.js?v=202611161628"></script>
 
 </body></html>
