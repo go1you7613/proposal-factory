@@ -137,11 +137,11 @@ input:focus,select:focus,textarea:focus{outline:0;border-color:var(--c-primary);
 /* ---- 프로토타입 안내 바 (시안 표시) ---- */
 /* 상단 안내 바 (2026-11-16 수정): 참고 화면(Framer) 맞춤. 흰 바탕, 높이 40px, 아래 선 #E8E8E8 */
 .guide{background:#FFFFFF;border-bottom:1px solid #E8E8E8;box-shadow:none;min-height:40px;padding:0 12px;}
-.guide .gid{background:#F3F3F3;color:#1A1A1A;}
-.guide .gname{color:#1A1A1A;}
-.guide .gsys{color:#8A8A8A;}
-.guide .gdesc{color:#5A5A5A;}
-.guide .gbtn .btn:not(.btn--primary){background:#F3F3F3;border-color:transparent;color:#1A1A1A;}   /* 화면 목록 */
+.guide .gid{background:#F3F3F3;color:#222222;}
+.guide .gname{color:#222222;}
+.guide .gsys{color:#999999;}
+.guide .gdesc{color:#666666;}
+.guide .gbtn .btn:not(.btn--primary){background:#F3F3F3;border-color:transparent;color:#222222;}   /* 화면 목록 */
 
 /* ---- 3D 그림 (D-117: 화면당 1개, 표와 편집기 안에는 넣지 않음) ---- */
 img.hero3d{display:block;margin:0 auto 6px;width:96px;height:96px;filter:drop-shadow(0 10px 14px rgba(0,161,255,.25));}
@@ -189,9 +189,19 @@ body{background:#EEEEEE;}
 .sch{background:var(--c-gray-field);border-radius:8px;}
 .sch:focus-within{outline:1px solid #C9C9C9;}
 .snav a:hover{background:#F7F7F7;}
-.snav a.on{background:var(--c-gray-sel);color:#1A1A1A;font-weight:500;}
-.snav a.on small,.snav a.on svg{color:#1A1A1A;}
-.stepnav li.on a{background:var(--c-gray-sel);color:#1A1A1A;}
-.ptree li.on{background:var(--c-gray-sel);color:#1A1A1A;}
-.vrail button.on,.rail button.on{background:var(--c-gray-sel);color:#1A1A1A;}
-.app-h nav a.on{color:#1A1A1A;border-bottom-color:#1A1A1A;}
+.snav a.on{background:var(--c-gray-sel);color:#222222;font-weight:500;}
+.snav a.on small,.snav a.on svg{color:#222222;}
+.stepnav li.on a{background:var(--c-gray-sel);color:#222222;}
+.ptree li.on{background:var(--c-gray-sel);color:#222222;}
+.vrail button.on,.rail button.on{background:var(--c-gray-sel);color:#222222;}
+.app-h nav a.on{color:#222222;border-bottom-color:#222222;}
+
+/* ---- 글자색, 버튼 (2026-11-16): 참고 화면(Framer) 맞춤 ----
+   제목, 진한 글자 #222222 / 본문 #666666 / 보조, 안내 글자 #999999 */
+:root{--c-ink:#222222;--c-heading:#222222;--c-text:#666666;--c-muted:#999999;}
+.snav a.on,.snav a.on small,.snav a.on svg,.stepnav li.on a,.ptree li.on,.vrail button.on,.rail button.on,.app-h nav a.on{color:#222222;}
+.app-h nav a.on{border-bottom-color:#222222;}
+.acct .av{color:#222222;}
+.guide .gbtn .btn{border-radius:8px;}             /* 상단 우측 버튼: 둥근 알약 → 8px */
+.btn--primary{box-shadow:none;}                   /* 파란 버튼 그림자 없앰 */
+.sch input::placeholder,input::placeholder,textarea::placeholder{color:#999999;}  /* 입력 안내 글자 */
