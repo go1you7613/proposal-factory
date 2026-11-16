@@ -506,3 +506,9 @@ input::placeholder,textarea::placeholder,.sch input::placeholder{color:#C4C4C4;}
 .badge{font-size:12px;}
 /* 배지 모양(완전 둥근) 요소 전체 12px: 로고 BETA, 사업 머리 업체 칩, 단계 표시(준비, 제안서 작성, 마무리) */
 .app-h .logo small,.side .brand small,.pbar .chip,.pstep > span,.chip{font-size:12px;}
+
+/* 화면 바탕: 작업창(UW03, UW08 .ed)만 회색 #EEEEEE, 나머지 화면은 흰색 (2026-11-16) */
+body:not(:has(.ed)){background:#FFFFFF;}
+body:not(:has(.ed)) main,body:not(:has(.ed)) .main{background:#FFFFFF;}
+/* 흰 바탕 위 카드: 그림자 대신 옅은 테두리로 구분 */
+body:not(:has(.ed)) .card{border:1px solid #EEEEEE;box-shadow:none;}
