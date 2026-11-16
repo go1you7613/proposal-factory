@@ -70,7 +70,7 @@ body[data-screen="AW01"] .g4>.card.kpi:nth-child(3) .n{color:var(--c-error-ink);
 body[data-screen="AW01"] .g4>.card.kpi:nth-child(4){background:var(--c-warning-weak);}   /* 확인사항 미해결 */
 body[data-screen="AW01"] .g4>.card.kpi:nth-child(4) .n{color:var(--c-warning-ink);}
 th{background:#F6F9FC;color:var(--c-heading);font-weight:600;}
-th,td{border-bottom-color:#EEF2F6;}
+th,td{border-bottom-color:#EEEEEE;}
 tbody tr:hover td{background:#FAFCFE;}
 
 /* ---- 입력 ---- */
@@ -135,8 +135,8 @@ input:focus,select:focus,textarea:focus{outline:0;border-color:var(--c-primary);
 .toast{background:var(--c-heading);}
 
 /* ---- 프로토타입 안내 바 (시안 표시) ---- */
-/* 상단 안내 바 (2026-11-16 수정): 참고 화면(Framer) 맞춤. 흰 바탕, 높이 40px, 아래 선 #E8E8E8 */
-.guide{background:#FFFFFF;border-bottom:1px solid #E8E8E8;box-shadow:none;min-height:50px;padding:0 12px;}   /* 높이 50px: 참고 화면 캔버스 버튼 줄 (2026-11-16) */
+/* 상단 안내 바 (2026-11-16 수정): 참고 화면(Framer) 맞춤. 흰 바탕, 높이 40px, 아래 선 #EEEEEE */
+.guide{background:#FFFFFF;border-bottom:1px solid #EEEEEE;box-shadow:none;min-height:50px;padding:0 12px;}   /* 높이 50px: 참고 화면 캔버스 버튼 줄 (2026-11-16) */
 .guide .gid{background:#F3F3F3;color:#222222;}
 .guide .gname{color:#222222;}
 .guide .gsys{color:#999999;}
@@ -255,7 +255,7 @@ body[data-screen="UW01"],body[data-screen="UW01"] .shell,body[data-screen="UW01"
 .lhead select{background-color:#F2F2F2;border:0;color:#222222;padding-right:28px;}
 /* 카드: 모서리 8px, 옅은 회색 바탕 + 1px 선, 그림자 없음, 카드 사이 40px */
 .tgrid{gap:40px 40px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));}
-.tcard .tthumb{border:1px solid #EDEDED;border-radius:8px;background:#FAFAFA;box-shadow:none;}
+.tcard .tthumb{border:1px solid #EEEEEE;border-radius:8px;background:#FAFAFA;box-shadow:none;}
 .tcard .tthumb:hover{border-color:#DDDDDD;box-shadow:none;transform:none;}
 /* 카드 아래 글자: 이름 14px #222, 보조 14px #999, 카드와 글자 사이 12px */
 .tmeta{margin-top:12px;}
@@ -357,12 +357,12 @@ input:not([type=checkbox]):not([type=radio]):focus,textarea:focus,select:focus{b
 /* 유틸바 숫자: 파란 정원, 작은 숫자 */
 .vrail .n,.vrail button.on .n,.rail .n,.rail button.on .n{display:flex;align-items:center;justify-content:center;width:16px;height:16px;min-width:0;padding:0;border-radius:50%;background:#0091EA;color:#FFFFFF;font-size:10px;line-height:1;top:6px;right:12px;}
 /* 사업명: 둥근 테두리 칩 (Framer Canvas 칩 형식) */
-.ed .projhd .pj{width:auto;max-width:100%;height:32px;padding:0 10px;gap:6px;border:1px solid #E8E8E8;border-radius:8px;background:#FFFFFF;font-size:14px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
+.ed .projhd .pj{width:auto;max-width:100%;height:32px;padding:0 10px;gap:6px;border:1px solid #EEEEEE;border-radius:8px;background:#FFFFFF;font-size:14px;box-shadow:0 1px 2px rgba(0,0,0,.04);}
 .ed .projhd .pj b{font-weight:600;}
 .ed .projhd .pj svg{width:12px;height:12px;color:#222222;}
 .ed .projhd .pj:hover,.ed .projhd.open .pj{background:#F3F3F3;}
 /* 페이지, 템플릿, 에셋 탭: 회색 알약 (밑줄 없음) */
-.ed .projhd + .ptabs{gap:4px;padding:8px 10px;border-bottom:1px solid #E8E8E8;}
+.ed .projhd + .ptabs{gap:4px;padding:8px 10px;border-bottom:1px solid #EEEEEE;}
 .ed .projhd + .ptabs button{flex:none;height:28px;padding:0 10px;border:0;border-radius:8px;background:none;font-size:13px;font-weight:400;color:#999999;}
 .ed .projhd + .ptabs button:hover{color:#222222;}
 .ed .projhd + .ptabs button.on{background:#F3F3F3;color:#222222;font-weight:500;border:0;}
@@ -370,3 +370,6 @@ input:not([type=checkbox]):not([type=radio]):focus,textarea:focus,select:focus{b
 .ptree li.p{gap:11px;height:30px;padding:0 4px 0 28px;font-size:13px;}
 .ptree li.p svg{width:12px;height:12px;color:#222222;flex:none;}
 .vrail .n,.vrail button.on .n{right:auto;left:calc(50% + 5px);top:3px;}
+
+/* 옅은 회색 선, 아이콘 버튼 테두리: 바탕 회색 #EEEEEE 로 통일 (A4 문서 안은 제외) */
+:root{--c-border:#EEEEEE;--c-border-strong:#EEEEEE;}
