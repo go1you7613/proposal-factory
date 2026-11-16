@@ -285,3 +285,15 @@ body[data-screen="UW01"],body[data-screen="UW01"] .shell,body[data-screen="UW01"
 .tq{position:absolute;right:12px;top:12px;z-index:2;display:inline-flex;align-items:center;gap:4px;color:#222222;font-family:var(--font-display);font-weight:600;font-size:var(--fs-12);}
 .tq svg{width:16px;height:16px;stroke-width:2.4;color:#222222;}
 .dday.dday--done{color:#222222;}
+
+/* ---- 2026-11-16 수정 ----
+   상단 화면 목록, 기능설명: 두 버튼 같은 모양. 흰 바탕 + 1px #222222 테두리 + #222222 글자, 아이콘
+   환영 영역: 오른쪽 끝이 버튼 줄과 같은데 그림자 번짐 때문에 넓어 보여 그림자 없앰
+   D-day: 파란 계열(#0091EA), 확인할 일 체크 + 숫자: 빨강 #E83131 */
+.guide .gbtn .btn,.guide .gbtn .btn:not(.btn--primary),.guide .gbtn .btn.btn--primary{background:#FFFFFF;border:1px solid #222222;color:#222222;box-shadow:none;}
+.guide .gbtn .btn svg{color:#222222;}
+.guide .gbtn .btn:hover,.guide .gbtn .btn:not(.btn--primary):hover{background:#F3F3F3;}
+.welcome{box-shadow:none;}
+.dday,.tbadges .dday{color:#0091EA;}
+.dday.dday--done{color:#222222;}
+.tq,.tq svg{color:#E83131;}
