@@ -326,3 +326,7 @@ body[data-screen="UW01"],body[data-screen="UW01"] .shell,body[data-screen="UW01"
 .guide .gbtn .btn{height:30px;padding:0 10px;gap:11px;font-size:13px;font-weight:400;}
 .guide .gbtn .btn svg{width:12px;height:12px;}
 .guide .gdesc{word-break:keep-all;}
+/* 화면 목록, 기능설명 (2026-11-16 재수정): 아이콘과 글자 사이 6px, 버튼 좌우 여백 4px, 버튼 사이 0 */
+.guide .gbtn{gap:0;}
+.guide .gbtn .btn{padding:0 4px;gap:6px;}
+.guide .gbtn .btn{margin-left:0 !important;}   /* 자동 간격(8px) 끄기 */
