@@ -135,9 +135,9 @@ input:focus,select:focus,textarea:focus{outline:0;border-color:var(--c-primary);
 .toast{background:var(--c-heading);}
 
 /* ---- 프로토타입 안내 바 (시안 표시) ---- */
-/* 상단 안내 바 (2026-11-16): 바탕 = 화면 ID 배지 색(#2A3547), 배지는 흰 바탕 + 같은 색 글자로 반전, 나머지 글자 흰색 */
-.guide{background:var(--c-heading);border-bottom:0;box-shadow:none;}
-.guide .gid{background:#fff;color:var(--c-heading);}
+/* 상단 안내 바 (2026-11-16): 바탕 #3A3A3A, 화면 ID 배지는 흰 바탕 + 같은 색 글자로 반전, 나머지 글자 흰색 */
+.guide{--c-guide:#3A3A3A;background:var(--c-guide);border-bottom:0;box-shadow:none;}
+.guide .gid{background:#fff;color:var(--c-guide);}
 .guide .gname{color:#fff;}
 .guide .gsys{color:rgba(255,255,255,.75);}
 .guide .gdesc{color:rgba(255,255,255,.9);}
