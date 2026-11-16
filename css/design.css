@@ -304,3 +304,7 @@ body[data-screen="UW01"],body[data-screen="UW01"] .shell,body[data-screen="UW01"
 .snav a{font-size:13px;}
 .snav a small{font-size:11px;}
 .snav a.on{font-weight:700;}
+/* 썸네일 없는 카드 (2026-11-16): 진행 막대 + 진행률만 가운데. 진행률 숫자 굵은 파랑 */
+.ic{align-items:stretch;justify-content:center;gap:10px;}
+.ic .none{font-size:13px;color:#999999;}
+.ic .pct{color:#0091EA;font-weight:700;}
