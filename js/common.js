@@ -92,7 +92,7 @@
     const p = key === 'out' ? ['out', 'UW11', 'PDF 출력', 'file-output'] : (window.PANELS || []).find(x => x[0] === key);
     if (!p) return;
     const pr = state ? '&state=' + encodeURIComponent(state) : '';  // 자료 창을 특정 상태로 열기 (예: 목차 파일 올리기)
-    const body = p[1] ? `<iframe title="${esc(p[2])}" src="${p[1]}.html?embed=1${pr}"></iframe>` : `<div class="drw-in">${($('#info-tpl') || {}).innerHTML || ''}</div>`;
+    const body = p[1] ? `<iframe title="${esc(p[2])}" src="${p[1]}.html?embed=1${pr}&v=${(($('link[href*="design.css"]') || {}).href || '').split('v=')[1] || ''}"></iframe>` : `<div class="drw-in">${($('#info-tpl') || {}).innerHTML || ''}</div>`;
     d.innerHTML = `<div class="drw-h"><i data-lucide="${p[3]}"></i><b>${esc(p[2])}</b><span class="grow"></span>
       <button class="btn btn--sm" id="drw-size" onclick="PF.drawerBig()"></button>
       <button class="btn btn--sm btn--ghost" aria-label="닫기" onclick="PF.drawer(null)"><i data-lucide="x"></i></button></div>${body}`;

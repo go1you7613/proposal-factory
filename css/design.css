@@ -504,3 +504,5 @@ h2,.card h2,.card h3,.drw-in h3{font-size:16px;font-weight:600;color:#222222;}
 input::placeholder,textarea::placeholder,.sch input::placeholder{color:#C4C4C4;}
 /* 배지 (완전 둥근 모양) 전체: 글자 12px */
 .badge{font-size:12px;}
+/* 배지 모양(완전 둥근) 요소 전체 12px: 로고 BETA, 사업 머리 업체 칩, 단계 표시(준비, 제안서 작성, 마무리) */
+.app-h .logo small,.side .brand small,.pbar .chip,.pstep > span,.chip{font-size:12px;}
