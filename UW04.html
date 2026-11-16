@@ -10,7 +10,7 @@
 
 <div class="split"><div><h1>RFP 분석</h1><p class="sub" style="margin:0">참여를 정할 때 확정한 분석 결과예요. 여기서는 보기만 하고, 발주기관 확인사항(질의, 회신, 작성 가정)만 처리해요. 정정 공고가 나오면 비교해 반영해요.</p></div>
   <span style="display:flex;gap:6px"><a class="btn btn--sm" href="UW04.html?state=diff"><i data-lucide="git-compare"></i>정정 공고 비교</a></span></div>
-<div data-state="sumerr"></div><template data-pop="sumerr" data-w="460"><h3 class="pop-ic"><i data-lucide="alert-triangle"></i>배점 합이 100 이 아니에요</h3><p style="margin:0">지금 합계는 95 예요. 발주기관 확인사항 K-05 로 올렸어요.</p><p class="muted" style="margin:4px 0 0;font-size:13px">회신이 오면 기록해 주세요.</p>
+<div data-state="sumerr"></div><template data-pop="sumerr" data-w="460"><h3 class="pop-ic"><i data-lucide="alert-triangle"></i>배점 합이 100 이 아니에요</h3><p style="margin:0">지금 합계는 95 예요. 발주기관 확인사항 K-05 로 올렸어요.</p><p class="muted" style="margin:4px 0 0;font-size:14px">회신이 오면 기록해 주세요.</p>
   <div class="acts"><button class="btn btn--primary" onclick="PF.pop(null)">확인</button></div></template>
 <div data-state="diff"><div class="card"><h2>정정 공고 비교 (1차 정정)</h2><div class="tw"><table><tr><th>항목</th><th>원 공고</th><th>정정 공고</th><th>영향</th></tr>
   <tr><td>제출 마감</td><td>2026-11-25 10:00</td><td><b>2026-11-27 10:00</b></td><td>일정 갱신</td></tr>
@@ -23,7 +23,7 @@
 <div data-state="noreply"><div class="card"><h2>K-01 회신 기록</h2><p class="muted" style="margin-top:0">야간 운영 지원 인력의 상주 여부 · SER-004, p.42</p>
   <div class="row"><label>결과</label><select><option>회신 없음</option><option>회신 받음</option></select></div>
   <div class="row"><label>작성 가정 * (회신 없음일 때 필수)</label><textarea rows="2">비상주 대기 1명, 1시간 안 원격 접속으로 작성</textarea></div>
-  <p class="muted" style="font-size:12px">작성 가정은 제안서 작성(UW08) 근거 패널에 보이고, AI 초안이 이 가정대로 써요.</p>
+  <p class="muted" style="font-size:13px">작성 가정은 제안서 작성(UW08) 근거 패널에 보이고, AI 초안이 이 가정대로 써요.</p>
   <a class="btn btn--primary" href="UW04.html?state=agency">저장</a> <a class="btn" href="UW04.html?state=agency">취소</a></div></div>
 <div data-state="default sumerr diff agency reg noreply">
 <div class="grid g4">
@@ -65,7 +65,7 @@
 <script>
 
 document.getElementById('t-req').innerHTML = '<tr><th>고유번호</th><th>명칭</th><th>분류</th><th>귀속 절</th><th>상태</th></tr>' +
-  REQS.map(r => `<tr><td class="nowrap"><b>${r[0]}</b></td><td>${PF.esc(r[1])}</td><td>${r[2]}</td><td>${r[3]} <span class="muted" style="font-size:12px">(목차에서 바꿈)</span></td><td>${PF.st('확정')}</td></tr>`).join('') +
+  REQS.map(r => `<tr><td class="nowrap"><b>${r[0]}</b></td><td>${PF.esc(r[1])}</td><td>${r[2]}</td><td>${r[3]} <span class="muted" style="font-size:13px">(목차에서 바꿈)</span></td><td>${PF.st('확정')}</td></tr>`).join('') +
   '<tr><td colspan="5" class="muted">… 40건 더 (더미)</td></tr>';
 const st4 = new URLSearchParams(location.search).get('state');
 if (st4 === 'sumerr') document.getElementById('sumv').textContent = '95';

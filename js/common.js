@@ -40,14 +40,14 @@
     if (!bg) { bg = document.createElement('div'); bg.id = 'fx-modal'; bg.className = 'modal-bg'; document.body.appendChild(bg); }
     bg.innerHTML = `<div class="modal" role="dialog" aria-modal="true">
       <button class="x" aria-label="닫기" onclick="PF.closeFeature()"><i data-lucide="x"></i></button>
-      <h3>${esc(s.id)} ${esc(s.name)} <span class="muted" style="font-size:13px;font-weight:400">${esc(sys.tab)} ${esc(sys.name)}</span></h3>
+      <h3>${esc(s.id)} ${esc(s.name)} <span class="muted" style="font-size:14px;font-weight:400">${esc(sys.tab)} ${esc(sys.name)}</span></h3>
       <p style="margin:0 0 14px">${esc(s.desc)}</p>
       <h2 style="margin-top:0">주요 기능 (${feats.length}개)</h2>
       <div class="tw"><table><tr><th>기능 ID</th><th>기능명</th><th>설명</th><th>표시와 입력, 처리 규칙</th><th>예외</th><th>관련 데이터</th><th>권한</th></tr>${rows || '<tr><td colspan="7" class="muted">기능 없음</td></tr>'}</table></div>
       <h2>화면 상태 보기</h2><div class="chips">${states}</div>
       <h2>기준 문서</h2>
       <p style="margin:0">${esc(DOC_REF.title)} <span class="muted">(${esc(DOC_REF.path)})</span></p>
-      <p class="muted" style="margin:4px 0 0;font-size:12px">${esc(DOC_REF.note)}</p></div>`;
+      <p class="muted" style="margin:4px 0 0;font-size:13px">${esc(DOC_REF.note)}</p></div>`;
     bg.classList.add('show');
     PF.icons();
     bg.onclick = e => { if (e.target === bg) PF.closeFeature(); };
@@ -126,29 +126,29 @@
   //   [퍼블리싱] 고르기 단계의 끌어 놓기 영역 = 숨긴 input[type=file] accept=".xlsx,.csv,.pdf,.hwpx,.docx" 와 연결. 원본은 사업 폴더 00. 자료실/ 에 저장
   const TOCUP = {
     pick: `<h3 id="tut">목차 파일 올리기</h3><p class="muted" style="margin:0 0 12px">가지고 있는 목차 파일을 올리면 AI 가 장, 절을 읽어 지금 목차와 비교해 보여 줘요. 바꾸기 전까지 지금 목차는 그대로예요.</p>
-      <div class="drop--lg"><i data-lucide="file-up"></i><b>파일을 끌어 놓거나 눌러서 고르세요</b><span class="muted" style="font-size:12px">엑셀(xlsx, csv), PDF, HWPX, 워드(docx)</span></div>
+      <div class="drop--lg"><i data-lucide="file-up"></i><b>파일을 끌어 놓거나 눌러서 고르세요</b><span class="muted" style="font-size:13px">엑셀(xlsx, csv), PDF, HWPX, 워드(docx)</span></div>
       <div class="acts" style="margin-top:14px;justify-content:flex-end"><button class="btn" onclick="PF.tocUp(null)">닫기</button></div>
-      <p class="muted" style="font-size:12px;margin:10px 0 0">(프로토타입) <a href="#" onclick="PF.tocUp('read');return false">목차_최종.xlsx 고르기</a></p>`,
+      <p class="muted" style="font-size:13px;margin:10px 0 0">(프로토타입) <a href="#" onclick="PF.tocUp('read');return false">목차_최종.xlsx 고르기</a></p>`,
     read: `<h3 id="tut">목차를 읽고 있어요</h3><p class="muted" style="margin:0 0 12px">목차_최종.xlsx</p>
       <div class="bar"><i style="width:60%"></i></div><p class="now" style="margin:10px 0 0"><i data-lucide="loader"></i>장, 절 번호와 이름, 페이지 수 칸을 찾고 있어요</p>
-      <p class="muted" style="font-size:12px;margin:12px 0 0">(프로토타입) <a href="#" onclick="PF.tocUp('preview');return false">읽기 끝 (미리보기)</a> · <a href="#" onclick="PF.tocUp('fail');return false">목차를 찾지 못함</a></p>`,
+      <p class="muted" style="font-size:13px;margin:12px 0 0">(프로토타입) <a href="#" onclick="PF.tocUp('preview');return false">읽기 끝 (미리보기)</a> · <a href="#" onclick="PF.tocUp('fail');return false">목차를 찾지 못함</a></p>`,
     fail: `<h3 id="tut">목차를 찾지 못했어요</h3><p style="margin:0 0 6px">목차_최종.xlsx 에서 장, 절 번호가 있는 표나 목록을 찾지 못했어요.</p>
-      <p class="muted" style="margin:0 0 14px;font-size:13px">장, 절 번호(예: Ⅰ, 1.1)와 이름이 한 줄씩 있는 파일인지 확인해 주세요. 지금 목차는 바뀌지 않았어요.</p>
+      <p class="muted" style="margin:0 0 14px;font-size:14px">장, 절 번호(예: Ⅰ, 1.1)와 이름이 한 줄씩 있는 파일인지 확인해 주세요. 지금 목차는 바뀌지 않았어요.</p>
       <div class="acts" style="justify-content:flex-end"><button class="btn" onclick="PF.tocUp(null)">닫기</button><button class="btn btn--primary" onclick="PF.tocUp('pick')"><i data-lucide="file-up"></i>다른 파일 고르기</button></div>`,
     preview: `<h3 id="tut">이 목차로 바꿀까요?</h3><p class="muted" style="margin:0 0 12px">목차_최종.xlsx 에서 읽은 목차예요.</p>
       <div class="alert alert--strong" style="margin:0 0 12px"><i data-lucide="alert-triangle"></i> 대목차(장)가 RFP 지정 목차와 달라요 (5장 → 4장). 이대로 바꾸면 RFP 가 정한 목차 순서와 달라져요.</div>
       <div class="sum" style="display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px"><span class="chip">장 5 → 4</span><span class="chip">절 13 → 15</span><span class="chip">요구사항 다시 배정 44 / 47건</span><span class="chip">미배정 3건</span><span class="chip">쓴 절 1개 보관/ 으로</span></div>
       <div class="grid g2">
-        <div><b style="font-size:13px">지금 목차</b><ul class="steps" style="margin-top:6px">
+        <div><b style="font-size:14px">지금 목차</b><ul class="steps" style="margin-top:6px">
           <li><b style="min-width:28px">I</b><span>일반부문</span><span class="muted" style="margin-left:auto">2절</span></li><li><b style="min-width:28px">II</b><span>사업관리부문</span><span class="muted" style="margin-left:auto">2절</span></li>
           <li><b style="min-width:28px">III</b><span>사업수행부문</span><span class="muted" style="margin-left:auto">4절</span></li><li><b style="min-width:28px">IV</b><span>기술부문</span><span class="muted" style="margin-left:auto">2절</span></li>
           <li><b style="min-width:28px">V</b><span>지원부문</span><span class="muted" style="margin-left:auto">3절</span></li></ul></div>
-        <div><b style="font-size:13px">올린 목차</b><ul class="steps" style="margin-top:6px">
+        <div><b style="font-size:14px">올린 목차</b><ul class="steps" style="margin-top:6px">
           <li><b style="min-width:28px">I</b><span>사업 개요</span><span class="badge badge--strong" style="margin-left:auto">이름 바뀜</span><span class="muted">3절</span></li>
           <li><b style="min-width:28px">II</b><span>수행 전략</span><span class="badge badge--strong" style="margin-left:auto">합쳐짐</span><span class="muted">4절</span></li>
           <li><b style="min-width:28px">III</b><span>운영 방안</span><span class="badge badge--strong" style="margin-left:auto">이름 바뀜</span><span class="muted">5절</span></li>
           <li><b style="min-width:28px">IV</b><span>지원 방안</span><span class="muted" style="margin-left:auto">3절</span></li></ul></div></div>
-      <p class="muted" style="font-size:12px;margin:10px 0 14px">바꾸면 요구사항을 새 절에 다시 배정하고, 페이지 수를 배점 비례로 다시 제안해요. 배정하지 못한 요구사항은 「미배정」으로 남아요. 이미 쓴 절(3.3 장애 대응)은 지우지 않고 PC 보관/ 폴더로 옮겨요.</p>
+      <p class="muted" style="font-size:13px;margin:10px 0 14px">바꾸면 요구사항을 새 절에 다시 배정하고, 페이지 수를 배점 비례로 다시 제안해요. 배정하지 못한 요구사항은 「미배정」으로 남아요. 이미 쓴 절(3.3 장애 대응)은 지우지 않고 PC 보관/ 폴더로 옮겨요.</p>
       <div class="acts" style="justify-content:flex-end"><button class="btn" onclick="PF.tocUp(null)">취소</button><button class="btn btn--primary" onclick="PF.tocApply()"><i data-lucide="replace"></i>이대로 바꾸기</button></div>`
   };
   PF.tocUp = (step) => {
@@ -190,7 +190,7 @@
     if (step === 'edit') {
       const opt = (arr, v) => arr.map(([val, lab]) => `<option value="${val}"${val == v ? ' selected' : ''}>${lab}</option>`).join('');
       const steps = (r) => { const a = []; for (let x = r.min; x <= r.max + 1e-9; x += 0.5) a.push([x, x + 'pt']); return a; };
-      const rows = THEME.roles.map(r => `<tr><td><b>${r.l}</b><div class="muted" style="font-size:11px">${r.min} ~ ${r.max}pt</div></td>
+      const rows = THEME.roles.map(r => `<tr><td><b>${r.l}</b><div class="muted" style="font-size:12px">${r.min} ~ ${r.max}pt</div></td>
         <td><select data-k="${r.k}" data-p="font" aria-label="${r.l} 글꼴">${opt(r.fonts.map(f => [f, f]), r.font)}</select></td>
         <td><select data-k="${r.k}" data-p="size" aria-label="${r.l} 크기">${opt(steps(r), r.size)}</select></td>
         <td><select data-k="${r.k}" data-p="w" aria-label="${r.l} 두께">${opt(THEME.weights[r.font].map(w => [w, FMT_W[w]]), r.w)}</select></td></tr>`).join('');
@@ -200,7 +200,7 @@
         <div class="tw"><table class="fmt-t"><tr><th>역할</th><th>글꼴</th><th>크기</th><th>두께</th></tr>${rows}</table></div>
         <p class="fmt-warn" id="fmt-warn" hidden>본문이 RFP 작성 지침(11pt 이상)보다 작아요. 적용은 되지만 검사에서 오류로 나와요.</p>
         <div class="fmt-pv" id="fmt-pv" aria-label="미리보기"><div data-r="title">장애 등급별 신속 복구 체계</div><div data-r="band">장애를 4등급으로 나누고 등급마다 복구 시간을 약속합니다.</div><div data-r="sub">3.3.1 장애 등급과 복구 시간</div><div data-r="body">감시 도구로 24시간 장애를 감지하고, 1등급 장애는 2시간 안에 복구합니다.</div><div data-r="table">1등급 · 서비스 전체 중단 · 2시간 이내</div></div>
-        <p class="muted" style="font-size:12px;margin:8px 0 0"><i data-lucide="lock" style="width:12px;height:12px;vertical-align:-1px"></i> 테마 디자인으로 고정: ${THEME.locked.join(', ')}</p>
+        <p class="muted" style="font-size:13px;margin:8px 0 0"><i data-lucide="lock" style="width:12px;height:12px;vertical-align:-1px"></i> 테마 디자인으로 고정: ${THEME.locked.join(', ')}</p>
         <div class="acts" style="display:flex;align-items:center;gap:8px;justify-content:space-between;margin-top:14px"><button class="btn btn--ghost" onclick="PF.fmt('edit')">테마 기본값으로</button>
           <span style="display:flex;gap:8px"><button class="btn" onclick="PF.fmt(null)">닫기</button><button class="btn btn--primary" onclick="PF.fmtApply()"><i data-lucide="check"></i>${pre ? '이 서식으로 정하기' : '전체 페이지에 적용'}</button></span></div>`;
     } else if (step === 'result') {
@@ -212,11 +212,11 @@
           <tr><td><span class="badge badge--check">경고</span></td><td class="nowrap">전체</td><td>분량: 46페이지가 되어 계획 44페이지보다 늘었어요 (한도 50페이지 안)</td><td class="nowrap"><button class="btn btn--sm" onclick="PF.fmt(null);PF.modal('listmodal')">작업 현황</button></td></tr>
           <tr><td><span class="badge badge--check">경고</span></td><td class="nowrap">2.2 1페이지</td><td>표 글자가 줄바꿈되어 칸 높이가 커졌어요</td><td class="nowrap"><button class="btn btn--sm" onclick="PF.fmt(null)">그 자리로</button></td></tr>
           <tr><td><span class="badge badge--check">경고</span></td><td class="nowrap">5.1 2페이지</td><td>소제목이 두 줄이 되었어요</td><td class="nowrap"><button class="btn btn--sm" onclick="PF.fmt(null)">그 자리로</button></td></tr></table></div>
-        <p class="muted" style="font-size:12px;margin:8px 0 0">이 결과는 알림 탭과 검사 결과에도 남아요.</p>
+        <p class="muted" style="font-size:13px;margin:8px 0 0">이 결과는 알림 탭과 검사 결과에도 남아요.</p>
         <div class="acts" style="display:flex;align-items:center;gap:8px;justify-content:space-between;margin-top:14px"><button class="btn btn--ghost" onclick="PF.fmt(null);PF.toast('적용 전 서식으로 되돌렸어요.')"><i data-lucide="undo-2"></i>적용 전으로 되돌리기</button><button class="btn btn--primary" onclick="PF.fmt(null)">확인</button></div>`;
     } else if (step === 'running') {
       body = `<h3 id="fmt-t">서식을 적용하고 있어요</h3><p class="muted" style="margin:0 0 12px">모든 페이지를 다시 그리고 넘침과 분량을 검사해요.</p><div class="bar"><i style="width:65%"></i></div><p class="now" style="margin:10px 0 0"><i data-lucide="loader"></i>29 / 44페이지를 다시 그리고 있어요</p>
-        <p class="muted" style="font-size:12px;margin:12px 0 0">(프로토타입) <a href="#" onclick="PF.fmt('result');return false">적용 끝 (검사 결과)</a></p>`;
+        <p class="muted" style="font-size:13px;margin:12px 0 0">(프로토타입) <a href="#" onclick="PF.fmt('result');return false">적용 끝 (검사 결과)</a></p>`;
     }
     bg.innerHTML = `<div class="modal app-modal" role="dialog" aria-modal="true" aria-labelledby="fmt-t" style="max-width:${step === 'edit' ? 680 : 620}px"><button class="x" aria-label="닫기" onclick="PF.fmt(null)"><i data-lucide="x"></i></button>${body}</div>`;
     bg.classList.add('show'); PF.icons();

@@ -9,7 +9,7 @@
 <main>
 
 <div class="split"><div><h1>목차</h1><p class="sub" style="margin:0">목차는 언제든 고칠 수 있어요. 대목차(장)는 RFP 지정 목차라 그대로 두고, 세부 목차(절)는 추가, 이름 바꾸기, 순서 바꾸기, 페이지 수 조정을 할 수 있어요. 가지고 있는 목차 파일을 올려 통째로 바꿀 수도 있어요. 평가표에만 있는 항목은 <span class="tag-add">추가</span> 로 표시해요.</p></div>
-  <span style="display:flex;gap:6px;align-items:center"><button class="btn btn--sm" onclick="PF.tocUp('pick')"><i data-lucide="file-up"></i>목차 파일 올리기</button><span class="muted" id="savenote" style="font-size:12px"></span><button class="btn btn--sm btn--primary">변경 저장</button></span></div>
+  <span style="display:flex;gap:6px;align-items:center"><button class="btn btn--sm" onclick="PF.tocUp('pick')"><i data-lucide="file-up"></i>목차 파일 올리기</button><span class="muted" id="savenote" style="font-size:13px"></span><button class="btn btn--sm btn--primary">변경 저장</button></span></div>
 <!-- [퍼블리싱] 미배정, 분량 초과 (2026-11-15): 화면 위 경고 띠 대신 원인 자리에 표시한다
      ① 미배정: 「요구사항 배정」 제목 옆 라벨 + 미배정 행을 표 맨 위로 올려 강조 + 행마다 「절 고르기」
      ② 분량 초과: 목차 머리 「계획 n페이지 / 한도 50페이지」 굵게 + 「n페이지 초과」 라벨 + 「페이지 수 자동 배분」 버튼
@@ -18,7 +18,7 @@
 <div class="grid" style="grid-template-columns:minmax(0,3fr) minmax(0,2fr)">
   <div class="card"><div class="split" style="margin-bottom:8px"><h2 style="margin:0">목차</h2><span id="pg" style="display:flex;gap:6px;align-items:center"></span></div><ul class="tree" id="toc"></ul>
     <button class="btn btn--sm" style="margin-top:8px"><i data-lucide="plus"></i>절 추가</button>
-    <p class="muted" style="font-size:12px;margin:8px 0 0">절을 지우거나 옮기면 연결된 요구사항이 「미배정」으로 돌아가요. 이미 쓴 페이지는 지우지 않고 그대로 옮겨요.</p></div>
+    <p class="muted" style="font-size:13px;margin:8px 0 0">절을 지우거나 옮기면 연결된 요구사항이 「미배정」으로 돌아가요. 이미 쓴 페이지는 지우지 않고 그대로 옮겨요.</p></div>
   <div><div class="card"><h2 id="rqh">요구사항 배정</h2><div class="tw"><table id="rq"></table></div></div>
     <div class="card"><h2>평가 세부 요소 연결</h2><div class="tw"><table><tr><th>세부 요소</th><th>연결 절</th></tr>
       <tr><td>사업 이해도</td><td>1.1, 2.1</td></tr><tr><td>예방 점검</td><td>3.2</td></tr><tr><td>장애 대응</td><td>3.3</td></tr><tr><td>개인정보 보호</td><td>4.2 <span class="tag-add">추가</span></td></tr></table></div></div></div>
@@ -31,7 +31,7 @@
 const st = new URLSearchParams(location.search).get('state');
 const over = st === 'over', miss = st === 'unassigned' || st === 'applied';
 let plan = 0, cur = 0; const base = TOC.reduce((a, c) => a + c[2].reduce((x, y) => x + y[2], 0), 0), add = over ? 53 - base : 0;  // 분량 초과 예시: 합계 53페이지
-document.getElementById('toc').innerHTML = TOC.map(([n, t, secs]) => `<li class="ch"><i data-lucide="lock" class="lk-i" aria-label="대목차 고정"></i>${n}. ${PF.esc(t)}<span class="muted" style="margin-left:auto;font-weight:400;font-size:12px">RFP 지정, 고정</span></li>` +
+document.getElementById('toc').innerHTML = TOC.map(([n, t, secs]) => `<li class="ch"><i data-lucide="lock" class="lk-i" aria-label="대목차 고정"></i>${n}. ${PF.esc(t)}<span class="muted" style="margin-left:auto;font-weight:400;font-size:13px">RFP 지정, 고정</span></li>` +
   secs.map(([no, nm, p, c, s]) => { plan += p; cur += c; return `<li class="sec"><i data-lucide="grip-vertical" class="grip"></i><span class="grow"><input class="secname" aria-label="절 이름" value="${no} ${PF.esc(nm)}">${no === '4.2' ? ' <span class="tag-add">추가</span>' : ''}</span><input aria-label="계획 페이지 수" value="${no === '3.3' ? p + add : p}" style="width:52px"> 페이지</li>`; }).join('')).join('');
 document.getElementById('pg').innerHTML = over
   ? `<b>계획 ${plan + add}페이지</b><span class="muted">/ 한도 50페이지</span><span class="badge badge--check">3페이지 초과</span><button class="btn btn--sm"><i data-lucide="sparkles"></i>페이지 수 자동 배분</button>`

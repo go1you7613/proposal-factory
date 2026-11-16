@@ -33,7 +33,7 @@
   /* 글꼴, 크기 (Paperlogy 13px, 굵기 한 단계 낮춤) */
   --font-base:"PaperlogyUI",system-ui,sans-serif;
   --font-display:"PaperlogyUI",system-ui,sans-serif;
-  --fs-14:13px;  /* 기본 글자 크기 13px (2026-11-15) */
+  --fs-12:13px;--fs-14:14px;--fs-16:17px;--fs-18:19px;--fs-20:21px;--fs-24:25px;--fs-28:29px;--fs-32:33px;  /* 모든 글자 1px 키움 (2026-11-16): 기본 14px */
 
   /* 모양 */
   --r-sm:6px; --r-md:10px; --r-lg:16px;
@@ -42,7 +42,7 @@
   --sh-lg:0 12px 30px -2px rgba(58,75,116,.18);
 }
 
-body{font-family:var(--font-base);font-size:13px;color:var(--c-text);background:var(--c-bg-subtle);letter-spacing:-.01em;}
+body{font-family:var(--font-base);font-size:14px;color:var(--c-text);background:var(--c-bg-subtle);letter-spacing:-.01em;}
 a{color:var(--c-primary-ink);}
 
 /* ---- 버튼 ---- */
@@ -151,17 +151,17 @@ body[data-screen="UC01"] .login{margin:0;width:420px;max-width:420px;padding:32p
 .welcome{position:relative;display:flex;align-items:center;gap:24px;overflow:hidden;margin:0 0 24px;padding:24px 28px;border-radius:var(--r-lg);
   background:linear-gradient(120deg,#00A1FF 0%,#3DB6FF 55%,#6CC8FF 100%);color:#fff;box-shadow:0 12px 24px -12px rgba(0,161,255,.6);}
 .welcome::after{content:"";position:absolute;right:-60px;top:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.12);}
-.welcome h2{color:#fff;margin:0 0 4px;font-size:20px;}
-.welcome p{margin:0;opacity:.9;font-size:13px;}
+.welcome h2{color:#fff;margin:0 0 4px;font-size:21px;}
+.welcome p{margin:0;opacity:.9;font-size:14px;}
 .welcome .wst{display:flex;gap:10px;margin-top:14px;}
 .welcome .wst div{background:rgba(255,255,255,.18);border-radius:var(--r-md);padding:8px 14px;min-width:96px;}
-.welcome .wst b{display:block;font-family:var(--font-display);font-size:20px;line-height:1.2;}
-.welcome .wst small{font-size:12px;opacity:.9;}
+.welcome .wst b{display:block;font-family:var(--font-display);font-size:21px;line-height:1.2;}
+.welcome .wst small{font-size:13px;opacity:.9;}
 .welcome .grow{flex:1;min-width:0;position:relative;z-index:1;}
 .welcome img{width:132px;height:132px;flex:none;position:relative;z-index:1;margin:-8px 8px -12px 0;filter:drop-shadow(0 12px 16px rgba(0,40,90,.25));}
 
 /* ---- 원고 면(.a4)은 제안서 테마 유지: 그레이스케일 값으로 되돌림 ---- */
-.a4{--font-base:"Paperlogy",system-ui,sans-serif;--font-display:"Paperlogy",system-ui,sans-serif;--c-ink:#1A1A1A;--c-heading:#222222;--c-text:#4E4E4E;--c-muted:#767676;--c-border:#E0E0E0;--c-border-strong:#C4C4C4;--c-bg-subtle:#F5F5F5;letter-spacing:0;}
+.a4{--fs-12:12px;--fs-14:14px;--fs-16:16px;--fs-18:18px;--fs-20:20px;--fs-24:24px;--fs-28:28px;--fs-32:32px;--font-base:"Paperlogy",system-ui,sans-serif;--font-display:"Paperlogy",system-ui,sans-serif;--c-ink:#1A1A1A;--c-heading:#222222;--c-text:#4E4E4E;--c-muted:#767676;--c-border:#E0E0E0;--c-border-strong:#C4C4C4;--c-bg-subtle:#F5F5F5;letter-spacing:0;}
 
 /* ---- 진행 막대, 사업 바 단계 ---- */
 .bar{background:#E8EEF4;}

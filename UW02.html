@@ -28,16 +28,16 @@
     <label class="cc"><input type="radio" name="co"><span class="dot" aria-hidden="true"></span><b>예시기술(주) (더미)</b><span>정보통신공사업 · 42명</span><span class="muted">실적 31건 · 확인 필요 0</span></label>
     <label class="cc"><input type="radio" name="co"><span class="dot" aria-hidden="true"></span><b>시험소프트 (더미)</b><span>SW사업자 · 7명</span><span class="muted">실적 4건 · 확인 필요 5</span></label>
   </div>
-  <p style="margin:14px 0 0;font-size:13px"><a href="UC03.html?state=add">새 업체 등록</a></p>
+  <p style="margin:14px 0 0;font-size:14px"><a href="UC03.html?state=add">새 업체 등록</a></p>
   <div class="pact"><a class="btn" href="UW01.html">취소</a><a class="btn btn--primary" href="UW02.html">다음</a></div></div></div>
 <!-- 업체정보 등록: 일반현황 업로드 / 직접 입력 -->
 <div data-state="cupload"><div class="pick" style="max-width:640px">
   <h1>일반현황 업로드</h1><p class="sub">PDF, PPT 만 가능해요. 파일에서 공고 매칭에 쓰는 업체정보를 채워 드려요. 직접 입력과 같은 항목이에요.</p>
   <div class="drop drop--lg"><i data-lucide="file-up"></i><b>일반현황_장표_2026.pptx (더미, 8.4MB)</b><span class="muted">파일을 끌어 놓거나 눌러서 골라 주세요</span></div>
-  <div class="card" style="margin-top:16px"><div class="split" style="margin-bottom:4px"><b>업체정보</b><span class="muted" style="font-size:12px">파일에서 채운 값이에요. 확인하고 고쳐 주세요</span></div>
+  <div class="card" style="margin-top:16px"><div class="split" style="margin-bottom:4px"><b>업체정보</b><span class="muted" style="font-size:13px">파일에서 채운 값이에요. 확인하고 고쳐 주세요</span></div>
     <div class="grid g2"><div class="row"><label>상호 *</label><input value="샘플정보(주) (더미)"></div><div class="row"><label>사업자번호 *</label><div class="lk"><input value="000-00-00000 (더미)"><button class="btn" type="button"><i data-lucide="search"></i>나라장터 조회</button></div></div></div>
     <div class="row"><label>등록 업종 * <span class="muted" style="font-weight:400">입찰 참가 자격 판정</span> <span class="lock"><i data-lucide="lock"></i>나라장터 조회 · 2026-11-12</span></label><ul class="lkres"><li>1468 SW사업자 (컴퓨터관련서비스) <span class="muted">대표</span></li><li>1426 정보통신공사업</li><li>4993 데이터베이스제작업</li></ul></div>
-    <div class="row"><label>직접생산확인 품목 <span class="lock"><i data-lucide="lock"></i>나라장터 조회 · 2026-11-12</span></label><ul class="lkres"><li>소프트웨어유지및지원서비스 <span class="muted">유효 ~ 2027-05-31</span></li></ul><p class="muted" style="font-size:12px;margin:4px 0 0">조회 결과만 써요. 직접 입력하지 않아요. 조회가 안 되면 「다시 조회」 또는 관리자에게 문의.</p></div>
+    <div class="row"><label>직접생산확인 품목 <span class="lock"><i data-lucide="lock"></i>나라장터 조회 · 2026-11-12</span></label><ul class="lkres"><li>소프트웨어유지및지원서비스 <span class="muted">유효 ~ 2027-05-31</span></li></ul><p class="muted" style="font-size:13px;margin:4px 0 0">조회 결과만 써요. 직접 입력하지 않아요. 조회가 안 되면 「다시 조회」 또는 관리자에게 문의.</p></div>
     <div class="grid g2"><div class="row"><label>소재지 (시·도) * <span class="muted" style="font-weight:400">지역 제한</span></label><select><option>서울특별시</option><option>경기도</option><option>그 밖의 시·도</option></select></div>
       <div class="row"><label>기업 구분 * <span class="badge badge--check">확인 필요</span></label><select><option>소기업</option><option>소상공인</option><option>중기업</option><option>중견기업</option><option>대기업</option></select></div></div>
     <div class="row"><label>관심 사업 유형 <span class="muted" style="font-weight:400">실적에서 추천</span></label><div class="rchks"><label class="rchk"><input type="checkbox" checked><span>SI 구축</span></label><label class="rchk"><input type="checkbox" checked><span>유지관리</span></label><label class="rchk"><input type="checkbox"><span>인프라</span></label><label class="rchk"><input type="checkbox"><span>기타</span></label></div></div>
@@ -45,13 +45,13 @@
       <div class="kwbox"><div class="kwchips"><span class="kw">위성<button type="button" aria-label="위성 삭제">×</button></span><span class="kw">기상<button type="button" aria-label="기상 삭제">×</button></span><span class="kw">유지관리<button type="button" aria-label="유지관리 삭제">×</button></span></div><input id="kw1" class="kwin" placeholder="키워드 입력 후 Enter (예: 위성)"></div>
       <p class="kwsug muted">실적에서 찾은 추천: <button type="button" class="kwadd">+ 지상국</button><button type="button" class="kwadd">+ 관제</button></p></div>
     <div class="grid g2"><div class="row"><label>관심 금액 (최소) <span class="muted" style="font-weight:400">선택</span></label><input placeholder="1억"></div><div class="row"><label>관심 금액 (최대)</label><input placeholder="10억"></div></div>
-    <p class="muted" style="font-size:12px;margin:4px 0 0">설립, 인원, 실적, 인증 등 나머지 값도 함께 뽑아 「내 업체 정보」에 넣어요 (공고 매칭에는 쓰지 않음).</p></div>
+    <p class="muted" style="font-size:13px;margin:4px 0 0">설립, 인원, 실적, 인증 등 나머지 값도 함께 뽑아 「내 업체 정보」에 넣어요 (공고 매칭에는 쓰지 않음).</p></div>
   <div class="pact"><a class="btn" href="UW02.html?state=nocompany">이전</a><a class="btn btn--primary" href="UW02.html">등록하고 계속</a></div></div></div>
 <div data-state="cinput"><div class="pick" style="max-width:640px">
   <h1>업체정보 직접 입력</h1><p class="sub">공고를 찾는 데 쓰는 정보만 먼저 넣어요. 나머지는 내 업체 정보에서 채울 수 있어요.</p>
   <div class="card"><div class="grid g2"><div class="row"><label>상호 *</label><input></div><div class="row"><label>사업자번호 *</label><div class="lk"><input placeholder="000-00-00000"><button class="btn" type="button"><i data-lucide="search"></i>나라장터 조회</button></div></div></div>
     <div class="row"><label>등록 업종 * <span class="muted" style="font-weight:400">입찰 참가 자격 판정</span> <span class="lock"><i data-lucide="lock"></i>나라장터 조회 · 2026-11-12</span></label><ul class="lkres"><li>1468 SW사업자 (컴퓨터관련서비스) <span class="muted">대표</span></li><li>1426 정보통신공사업</li><li>4993 데이터베이스제작업</li></ul></div>
-    <div class="row"><label>직접생산확인 품목 <span class="lock"><i data-lucide="lock"></i>나라장터 조회 · 2026-11-12</span></label><ul class="lkres"><li>소프트웨어유지및지원서비스 <span class="muted">유효 ~ 2027-05-31</span></li></ul><p class="muted" style="font-size:12px;margin:4px 0 0">조회 결과만 써요. 직접 입력하지 않아요. 조회가 안 되면 「다시 조회」 또는 관리자에게 문의.</p></div>
+    <div class="row"><label>직접생산확인 품목 <span class="lock"><i data-lucide="lock"></i>나라장터 조회 · 2026-11-12</span></label><ul class="lkres"><li>소프트웨어유지및지원서비스 <span class="muted">유효 ~ 2027-05-31</span></li></ul><p class="muted" style="font-size:13px;margin:4px 0 0">조회 결과만 써요. 직접 입력하지 않아요. 조회가 안 되면 「다시 조회」 또는 관리자에게 문의.</p></div>
     <div class="grid g2"><div class="row"><label>소재지 (시·도) * <span class="muted" style="font-weight:400">지역 제한</span></label><select><option>서울특별시</option><option>경기도</option><option>그 밖의 시·도</option></select></div>
       <div class="row"><label>기업 구분 * <span class="muted" style="font-weight:400">중소기업 제한</span></label><select><option>소기업</option><option>소상공인</option><option>중기업</option><option>중견기업</option><option>대기업</option></select></div></div>
     <div class="row"><label>관심 사업 유형</label><div class="rchks"><label class="rchk"><input type="checkbox" checked><span>SI 구축</span></label><label class="rchk"><input type="checkbox" checked><span>유지관리</span></label><label class="rchk"><input type="checkbox"><span>인프라</span></label><label class="rchk"><input type="checkbox"><span>기타</span></label></div></div>
@@ -75,7 +75,7 @@
   <div class="pcards" style="margin-top:16px">
     <a class="pc" href="UW02.html?state=cinput"><i data-lucide="sliders-horizontal"></i><b>조건 고치기</b><span>관심 유형, 키워드, 금액을 넓혀 다시 찾아요</span></a>
     <a class="pc" href="UW02.html?state=upload"><i data-lucide="upload"></i><b>직접 업로드</b><span>RFP 를 가지고 있으면 바로 시작해요</span></a></div>
-  <p class="muted" style="font-size:12px;margin-top:14px">등록 업종, 소재지, 기업 구분은 입찰 자격이라 넓힐 수 없어요. 나라장터 정보가 바뀌었으면 「나라장터 조회」를 다시 해 주세요.</p></div></div>
+  <p class="muted" style="font-size:13px;margin-top:14px">등록 업종, 소재지, 기업 구분은 입찰 자격이라 넓힐 수 없어요. 나라장터 정보가 바뀌었으면 「나라장터 조회」를 다시 해 주세요.</p></div></div>
 <div data-state="find analyze fitq fitnp dlfail scan" id="findbg"><div class="split"><div><h1>공고 찾기</h1><p class="sub" style="margin:0">마감 전 용역 공고 1,240건 중 샘플정보(주) (더미) 에 맞는 공고 3건이에요. 「이 공고로 착수」를 누르면 AI 가 RFP 를 분석하고 참여 여부를 물어요.</p></div>
   <span style="display:flex;gap:6px"><a class="btn btn--sm" href="UW02.html?state=cinput"><i data-lucide="sliders-horizontal"></i>조건 고치기</a><a class="btn btn--sm" href="UW02.html?state=matching"><i data-lucide="refresh-cw"></i>다시 찾기</a></span></div>
   <div class="chips" style="margin:10px 0 12px"><span class="chip">업종 3</span><span class="chip">서울특별시</span><span class="chip">소기업</span><span class="chip">SI 구축, 유지관리</span><span class="chip">위성, 기상, 유지관리</span><span class="chip">1억 ~ 10억</span></div>
@@ -90,15 +90,15 @@
   <p class="muted" style="margin:0 0 12px">첨부를 받아 RFP 를 읽고 우리 업체와 맞는지 봐요. 보통 2 ~ 3분 걸려요.</p>
   <div class="bar"><i style="width:55%"></i></div>
   <p class="now" style="margin:10px 0 6px"><i data-lucide="loader"></i>RFP 의 참가 자격과 투입 인력 조건을 읽고 있어요</p>
-  <p class="muted" style="font-size:12px;margin:0 0 14px">이 창을 닫아도 분석은 계속돼요. 끝나면 알림으로 알려 드려요. 참여를 정하기 전에는 내 PC 에 아무것도 만들지 않아요.</p>
+  <p class="muted" style="font-size:13px;margin:0 0 14px">이 창을 닫아도 분석은 계속돼요. 끝나면 알림으로 알려 드려요. 참여를 정하기 전에는 내 PC 에 아무것도 만들지 않아요.</p>
   <div style="display:flex;gap:8px;justify-content:flex-end"><a class="btn" href="UW02.html?state=find">닫고 다른 공고 보기</a></div>
-  <p class="muted" style="font-size:12px;margin:10px 0 0">(프로토타입) <a href="UW02.html?state=fitq">분석 끝 (참여 확인)</a> · <a href="UW02.html?state=fitnp">인력 후보 없음</a> · <a href="UW02.html?state=dlfail">첨부 내려받기 실패</a> · <a href="UW02.html?state=scan">글자 없는 PDF</a></p></div></div></div>
+  <p class="muted" style="font-size:13px;margin:10px 0 0">(프로토타입) <a href="UW02.html?state=fitq">분석 끝 (참여 확인)</a> · <a href="UW02.html?state=fitnp">인력 후보 없음</a> · <a href="UW02.html?state=dlfail">첨부 내려받기 실패</a> · <a href="UW02.html?state=scan">글자 없는 PDF</a></p></div></div></div>
 <div data-state="fitq fitnp"><div class="modal-bg show"><div class="modal app-modal" role="dialog" aria-modal="true" aria-labelledby="cft" style="max-width:640px">
   <button class="x" aria-label="닫기" onclick="location.href='UW02.html?state=find'"><i data-lucide="x"></i></button>
   <p class="muted" style="margin:0">분석이 끝났어요</p>
   <h3 id="cft">이 사업, 참여할까요?</h3>
   <dl class="kv" style="margin:0 0 12px"><dt>공고</dt><dd>2027년 ○○정보시스템 운영 및 유지관리 (더미)</dd><dt>발주처</dt><dd>○○청</dd><dt>마감</dt><dd>2026-11-27 10:00 <span class="dday">D-15</span></dd><dt>추정가격</dt><dd>3.79억</dd><dt>규모</dt><dd>요구사항 47건, 제안서 50페이지 이내</dd></dl>
-  <b style="font-size:13px">우리 업체와 맞는지 (RFP 기준)</b>
+  <b style="font-size:14px">우리 업체와 맞는지 (RFP 기준)</b>
   <div class="sum" style="display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 4px"><span class="badge badge--solid">충족 9</span><span class="badge badge--check">확인 필요 3</span><span class="badge badge--check">미충족 1</span></div>
   <!-- [퍼블리싱] 적합성 (2026-11-14, UW05 화면 삭제): 판단에 필요한 문제 항목(미충족, 확인 필요)은 모두 펼쳐 보이고, 충족은 접어 둔다. 판정은 고치지 않는다 -->
   <div data-state="fitnp"><div class="alert alert--strong" style="margin:4px 0 8px">인력 후보가 없어 투입 인력 요건 3건을 판정하지 못했어요. <a href="UC03.html">내 업체 정보</a>에서 인력 후보를 넣으면 다시 판정해요.</div></div>
@@ -107,12 +107,12 @@
     <tr><td><span class="badge badge--check">확인 필요</span></td><td>유사 실적 3건 이상, 3년 <span class="muted">(정량 평가)</span></td><td>2건 + 1건 판단 필요</td></tr>
     <tr><td><span class="badge badge--check">확인 필요</span></td><td>정보보안 자격 1명 <span class="muted">(투입 인력)</span></td><td>자격 보유 여부 모름</td></tr>
     <tr><td><span class="badge badge--check">확인 필요</span></td><td>기술인력 보유 증빙 <span class="muted">(정량 평가)</span></td><td>증빙 서류 미등록</td></tr></table></div>
-  <details style="margin:0 0 8px;font-size:13px"><summary style="cursor:pointer">충족 9건 보기</summary>
+  <details style="margin:0 0 8px;font-size:14px"><summary style="cursor:pointer">충족 9건 보기</summary>
     <ul style="margin:6px 0 0;padding-left:18px"><li>SW사업자 신고: 1468 SW사업자 등록</li><li>중소기업 확인서: 유효 (2027-03)</li><li>신용평가 BB- 이상: BB0</li><li>PM 특급 1명 (경력 15년): 홍○○ (더미) 특급 29년</li><li class="muted">… 5건 더 (더미)</li></ul></details>
-  <p class="muted" style="font-size:12px;margin:0 0 14px"><a href="#" onclick="PF.drawer('rfp');return false">RFP 분석 보기</a></p>
-  <p class="muted" style="font-size:12px;margin:0 0 14px">참여하면 내 PC 작업 폴더에 사업 폴더를 만들고 첨부 3개를 00. 자료실/ 에 저장해요. 확인 필요, 미충족 항목은 업체 확인사항에 올라가요.<br>참여하지 않으면 분석 결과를 보관함에 남겨요.</p>
+  <p class="muted" style="font-size:13px;margin:0 0 14px"><a href="#" onclick="PF.drawer('rfp');return false">RFP 분석 보기</a></p>
+  <p class="muted" style="font-size:13px;margin:0 0 14px">참여하면 내 PC 작업 폴더에 사업 폴더를 만들고 첨부 3개를 00. 자료실/ 에 저장해요. 확인 필요, 미충족 항목은 업체 확인사항에 올라가요.<br>참여하지 않으면 분석 결과를 보관함에 남겨요.</p>
   <div style="display:flex;gap:8px;justify-content:flex-end"><a class="btn" href="UW02.html?state=find&amp;from=skip">참여 안 함</a><a class="btn btn--primary" href="UW03.html?from=find"><i data-lucide="rocket"></i>참여하고 시작</a></div>
-  <p class="muted" style="font-size:12px;margin:10px 0 0">(프로토타입) 작업 폴더 미연결일 때: <a href="UW02.html?state=nofolder">보기</a></p></div></div></div>
+  <p class="muted" style="font-size:13px;margin:10px 0 0">(프로토타입) 작업 폴더 미연결일 때: <a href="UW02.html?state=nofolder">보기</a></p></div></div></div>
 <div data-state="scan"><div class="modal-bg show"><div class="modal app-modal" role="dialog" aria-modal="true" aria-labelledby="sft">
   <button class="x" aria-label="닫기" onclick="location.href='UW02.html?state=find'"><i data-lucide="x"></i></button>
   <h3 id="sft">RFP 글자를 읽을 수 없어요</h3>
@@ -123,7 +123,7 @@
   <button class="x" aria-label="닫기" onclick="location.href='UW02.html?state=find'"><i data-lucide="x"></i></button>
   <h3 id="dft">첨부를 내려받지 못했어요</h3>
   <p style="margin:0 0 8px">제안요청서_최종.hwp 는 옛 HWP 형식이라 분석할 수 없어요. (공고문.pdf 는 내려받았어요)</p>
-  <p class="muted" style="margin:0 0 12px;font-size:13px">나라장터에서 파일을 열어 HWPX 나 PDF 로 저장한 뒤 직접 지정해 주세요. 공고 정보는 채워 둬요.</p>
+  <p class="muted" style="margin:0 0 12px;font-size:14px">나라장터에서 파일을 열어 HWPX 나 PDF 로 저장한 뒤 직접 지정해 주세요. 공고 정보는 채워 둬요.</p>
   <div style="display:flex;gap:8px;justify-content:flex-end"><a class="btn" href="UW02.html?state=find">닫기</a><a class="btn btn--primary" href="UW02.html?state=upload">파일 직접 지정</a></div></div></div></div>
 <!-- 직접 업로드: 공고 정보 + 파일 -->
 <div data-state="upload dup nofolder"><h1>직접 업로드</h1><p class="sub">공고 정보와 RFP 를 넣으면 AI 가 분석하고 참여 여부를 물어요. 참여하면 내 PC 작업 폴더에 사업 폴더를 만들어요. 원본 파일은 내 PC 에 두고, 뽑은 글자는 서버에 보관해요 (다시 분석, 정정 공고 비교용).</p></div>
@@ -131,13 +131,13 @@
   <button class="x" aria-label="닫기" onclick="location.href='UW02.html?state=upload'"><i data-lucide="x"></i></button>
   <h3 id="dupt">이미 착수한 공고예요</h3>
   <p style="margin:0 0 8px">같은 공고번호(R26BK00000000-000)로 착수한 사업이 있어요. 같은 공고로 사업을 두 번 만들 수 없어요.</p>
-  <p class="muted" style="margin:0 0 14px;font-size:13px">2027년 ○○정보시스템 운영 및 유지관리 (더미) · 제안서 작성 중 · 최근 작업 5분 전</p>
+  <p class="muted" style="margin:0 0 14px;font-size:14px">2027년 ○○정보시스템 운영 및 유지관리 (더미) · 제안서 작성 중 · 최근 작업 5분 전</p>
   <div style="display:flex;gap:8px;justify-content:flex-end"><a class="btn" href="UW02.html?state=upload">닫기</a><a class="btn btn--primary" href="UW08.html">기존 사업 열기</a></div></div></div></div>
 <div data-state="nofolder"><div class="modal-bg show"><div class="modal app-modal" role="dialog" aria-modal="true" aria-labelledby="nft2">
   <button class="x" aria-label="닫기" onclick="location.href='UW02.html?state=upload'"><i data-lucide="x"></i></button>
   <h3 id="nft2">작업 폴더를 먼저 연결해 주세요</h3>
   <p style="margin:0 0 8px">참여하면 내 PC 작업 폴더에 사업 폴더와 제안서 골격을 만들어요. 그래서 폴더가 연결돼 있어야 시작할 수 있어요. 분석 결과는 그대로 남아 있어요.</p>
-  <p class="muted" style="margin:0 0 14px;font-size:13px">원고와 PDF 는 서버에 남기지 않고 내 PC 폴더에만 저장해요. 크롬, 엣지가 아니면 착수 뒤 사업 폴더 묶음을 내려받아요.</p>
+  <p class="muted" style="margin:0 0 14px;font-size:14px">원고와 PDF 는 서버에 남기지 않고 내 PC 폴더에만 저장해요. 크롬, 엣지가 아니면 착수 뒤 사업 폴더 묶음을 내려받아요.</p>
   <div style="display:flex;gap:8px;justify-content:flex-end"><a class="btn" href="UW02.html?state=upload">닫기</a><a class="btn btn--primary" href="UC04.html?state=none"><i data-lucide="folder-plus"></i>작업 폴더 연결</a></div></div></div></div>
 <div data-state="upload dup nofolder">
 <div class="grid g2">
@@ -160,7 +160,7 @@
       <li><span class="badge badge--weak s">선택</span><span style="flex:1">기타 첨부</span><button class="btn btn--sm">파일 선택</button></li>
     </ul>
     <h2>③ 만들 폴더</h2>
-    <pre class="card" style="background:var(--c-bg-subtle);margin:0;font-size:12px">작업 폴더/사업/R26BK00000000_○○정보시스템 운영/
+    <pre class="card" style="background:var(--c-bg-subtle);margin:0;font-size:13px">작업 폴더/사업/R26BK00000000_○○정보시스템 운영/
 ├─ 00. 자료실/      (RFP, 공고서 복사)
 ├─ 01. RFP분석/
 ├─ 01. 제안서/      (골격: 템플릿, 폰트, data/)
@@ -171,7 +171,7 @@
        ② 못 읽은 값: 빈칸 + <small class="miss">직접 입력해 주세요</small>
        ③ 필수(*): 사업명, 발주처, 사업 유형, 제출 마감. 비어 있으면 그 칸 아래에 안내
        ④ 같은 공고번호 사업이 이미 있으면 「이미 착수한 공고예요」 모달 (상태 dup) -->
-  <div class="card"><h2>② 공고 정보 <span class="muted" style="font-size:12px;font-weight:400">확인만 해 주세요</span></h2>
+  <div class="card"><h2>② 공고 정보 <span class="muted" style="font-size:13px;font-weight:400">확인만 해 주세요</span></h2>
     <div class="row"><label>공고번호 (차수) <small class="got">RFP 에서 가져옴</small></label><input value="R26BK00000000-000 (더미)"></div>
     <div class="row"><label>사업명 * <small class="got">RFP 에서 가져옴</small></label><input value="2027년 ○○정보시스템 운영 및 유지관리 (더미)"></div>
     <div class="row"><label>발주처 (수요기관) * <small class="got">RFP 에서 가져옴</small></label><input value="○○청"></div>

@@ -12,14 +12,14 @@
 <div class="grid g2">
 <div class="card"><h2>PC 작업 폴더</h2>
   
-  <div data-state="none"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--check">연결 안 됨</span></dd></dl><p class="muted" style="font-size:13px">원고와 PDF 는 서버에 남기지 않고 내 PC 폴더에만 저장해요.</p><button class="btn btn--primary"><i data-lucide="folder-open"></i>폴더 선택</button>
-    <p class="muted" style="font-size:12px">폴더를 고르면 브라우저가 권한을 물어요. 처음 연결하면 업체자료/, 내 제안서/, 사업/ 을 만들어요.</p></div>
+  <div data-state="none"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--check">연결 안 됨</span></dd></dl><p class="muted" style="font-size:14px">원고와 PDF 는 서버에 남기지 않고 내 PC 폴더에만 저장해요.</p><button class="btn btn--primary"><i data-lucide="folder-open"></i>폴더 선택</button>
+    <p class="muted" style="font-size:13px">폴더를 고르면 브라우저가 권한을 물어요. 처음 연결하면 업체자료/, 내 제안서/, 사업/ 을 만들어요.</p></div>
   <div data-state="perm"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--check">권한 필요</span></dd></dl><button class="btn btn--primary"><i data-lucide="shield-check"></i>권한 허용</button></div>
   <div data-state="perm"></div><template data-pop="perm" data-w="460"><h3 class="pop-ic"><i data-lucide="shield-alert"></i>폴더 권한을 다시 허용해 주세요</h3><p style="margin:0">브라우저를 다시 열면 권한을 다시 물어요.</p>
   <div class="acts"><button class="btn" onclick="PF.pop(null)">닫기</button><button class="btn btn--primary" onclick="PF.pop(null)"><i data-lucide="shield-check"></i>권한 허용</button></div></template>
-  <div data-state="unsupported"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--check">폴더 저장 안 됨</span></dd></dl><p class="muted" style="font-size:13px;margin:0">이 브라우저는 폴더에 바로 저장할 수 없어 결과물은 내려받기로 저장돼요. 크롬이나 엣지를 쓰면 폴더에 바로 저장돼요.</p></div>
+  <div data-state="unsupported"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--check">폴더 저장 안 됨</span></dd></dl><p class="muted" style="font-size:14px;margin:0">이 브라우저는 폴더에 바로 저장할 수 없어 결과물은 내려받기로 저장돼요. 크롬이나 엣지를 쓰면 폴더에 바로 저장돼요.</p></div>
   <div data-state="default pwerror"><dl class="kv"><dt>상태</dt><dd><span class="badge badge--solid">연결됨</span></dd><dt>폴더</dt><dd>제안공방 작업 폴더 <span class="muted">(브라우저 안에만 기억, 서버에 보내지 않음)</span></dd></dl>
-    <pre class="card" style="background:var(--c-bg-subtle);margin:12px 0 0;font-size:12px">작업 폴더/
+    <pre class="card" style="background:var(--c-bg-subtle);margin:12px 0 0;font-size:13px">작업 폴더/
 ├─ 업체자료/        인증서, 로고, 장표 원본
 ├─ 내 제안서/
 │  └─ &lt;업체&gt;/       업체별 과거 제안서 (내 업체 정보에서 올림)
