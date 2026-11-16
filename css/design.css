@@ -335,3 +335,6 @@ body[data-screen="UW01"],body[data-screen="UW01"] .shell,body[data-screen="UW01"
 /* 상단 우측 버튼: 오버 배경 좌우 여백 8px, 버튼끼리 겹치지 않게 2px 띄움 */
 .guide .gbtn{padding:0;gap:2px;}
 .guide .gbtn .btn{padding:0 8px;margin:0 !important;}
+
+/* UW01 카드: 중단은 배경 없이 회색 글자만 */
+.dday.dday--stop{color:#999999;}
