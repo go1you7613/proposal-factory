@@ -135,8 +135,13 @@ input:focus,select:focus,textarea:focus{outline:0;border-color:var(--c-primary);
 .toast{background:var(--c-heading);}
 
 /* ---- 프로토타입 안내 바 (시안 표시) ---- */
-.guide{border-bottom:0;box-shadow:0 1px 0 var(--c-border);}
-.guide .gid{background:var(--c-heading);}
+/* 상단 안내 바 (2026-11-16): 바탕 = 화면 ID 배지 색(#2A3547), 배지는 흰 바탕 + 같은 색 글자로 반전, 나머지 글자 흰색 */
+.guide{background:var(--c-heading);border-bottom:0;box-shadow:none;}
+.guide .gid{background:#fff;color:var(--c-heading);}
+.guide .gname{color:#fff;}
+.guide .gsys{color:rgba(255,255,255,.75);}
+.guide .gdesc{color:rgba(255,255,255,.9);}
+.guide .gbtn .btn:not(.btn--primary){border-color:transparent;}   /* 화면 목록: 테두리만 뺌, 흰 바탕 유지 */
 
 /* ---- 3D 그림 (D-117: 화면당 1개, 표와 편집기 안에는 넣지 않음) ---- */
 img.hero3d{display:block;margin:0 auto 6px;width:96px;height:96px;filter:drop-shadow(0 10px 14px rgba(0,161,255,.25));}
