@@ -15,7 +15,7 @@
   PF.st = v => {
     if (PROG[v]) { const [b, sub] = PROG[v]; return `<span class="badge ${PCLS[b]}">${b}</span>${sub ? `<span class="bsub">${esc(sub)}</span>` : ''}`; }
     const c = {
-      '완료': 'badge--solid', '확정': 'badge--solid', '충족': 'badge--solid', '반영': 'badge--solid', '수주': 'badge--solid', '연결됨': 'badge--solid',
+      '완료': 'badge--solid', '확정': 'badge--txt', '충족': 'badge--solid', '반영': 'badge--solid', '수주': 'badge--solid', '연결됨': 'badge--solid',
       '진행 중': 'badge--strong', '수정 중': 'badge--strong', '초안': 'badge--strong', '답변': 'badge--strong', '경고': 'badge--strong', '후보': 'badge--strong', '탈락': 'badge--strong',
       '시작 전': 'badge--weak', '빈 페이지': 'badge--weak', '보관': 'badge--weak', '참고': 'badge--weak', '참고(타사)': 'badge--mid', '제출 완료': 'badge--mid', '중단': 'badge--weak',
       '확인 필요': 'badge--check', '미충족': 'badge--check', '미답변': 'badge--check', '오류': 'badge--check', '보류': 'badge--check', '권한 필요': 'badge--check', '미연결': 'badge--check',

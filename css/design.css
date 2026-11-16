@@ -480,7 +480,8 @@ tr > th:first-child,tr > td:first-child{padding-left:20px;}
 tr > th:last-child,tr > td:last-child{padding-right:20px;}
 .a4 table tr > th,.a4 table tr > td{padding:4px 5px;}   /* A4 제안서 표는 원래 값 */
 /* 표 안 상태 (확정, 완료 등): 파란 글자만 */
-td .badge--solid{background:none;border:0;padding:0;color:#0091EA;font-weight:600;}
+td .badge--txt,.badge--txt{background:none;border:0;padding:0;color:#0091EA;font-weight:600;}   /* 확정: 파란 글자만 */
+.badge--solid,td .badge--solid{background:#0091EA;border-color:#0091EA;color:#FFFFFF;}   /* 완료 등: 파란 바탕 흰 글자 배지 */
 
 /* 닫기(X) 버튼 전체: 틀, 바탕 없이 아이콘만 16px #222 (창, 자료 창, 알림 등 모든 곳) */
 button[aria-label="닫기"],.modal .x,.jobnote .x{width:30px;height:30px;padding:0;border:0 !important;background:none !important;box-shadow:none;display:inline-flex;align-items:center;justify-content:center;color:#222222;cursor:pointer;line-height:0;}
