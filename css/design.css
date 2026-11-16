@@ -421,3 +421,28 @@ input[type=checkbox]:focus-visible{outline:2px solid #C9C9C9;outline-offset:1px;
 
 /* 상단 안내 바: 「A 사용자 웹」과 i 아이콘 사이 12 → 6px */
 .guide .gtip{margin-left:-6px;}
+
+/* ── 오른쪽 패널 내용 가독성 (2026-11-16, 디자인규격 문서 5장) ── */
+.ed .pin{line-height:1.6;word-break:keep-all;}
+/* 말풍선: 글자 13px, 안쪽 여백 사방 12px 통일, 말풍선 사이 12px */
+.chat{gap:12px;}
+.chat .q,.chat .a{font-size:13px;line-height:1.6;padding:12px;}
+.chat .q{border-radius:12px 12px 4px 12px;}
+.chat .a{border-radius:12px 12px 12px 4px;background:#F3F3F3;}
+.chat .a b{display:inline-block;margin:4px 0;}
+/* 말풍선 안 버튼: SM (높이 26px, 글자 12px, 여백 0 8px), 버튼 사이 4px */
+.chat .bact{display:flex;gap:4px;margin-top:10px;}
+.chat .bact .btn{height:26px;padding:0 8px;font-size:12px;border-radius:6px;border:1px solid transparent;}
+.chat .bact .btn--apply{background:#FFFFFF;border-color:#00A1FF;color:#00A1FF;}
+.chat .bact .btn--apply:hover{background:#E5F5FF;}
+/* AI 빠른 요청 칩: 글자 12px, 높이 26px, 칩 사이 6px */
+.aichips{gap:6px;margin:16px 0 0;}
+.aichips .chip{display:inline-flex;align-items:center;height:26px;padding:0 10px;font-size:12px;line-height:1;cursor:pointer;}
+/* 섹션 구분: 위 24px, 가는 선 */
+.pin .aisec{margin:24px 0 0;padding-top:20px;border-top:1px solid #EEEEEE;}
+.pin .aisec label{display:block;font-size:13px;font-weight:600;margin-bottom:8px;}
+.pin .aiin{margin-top:8px;}
+.pin .aisend{margin-top:8px;}
+.pin .ainote{font-size:12px;line-height:1.6;margin:12px 0 0;}
+/* 근거, 알림 목록: 항목 안 줄 사이 4px, 항목 사이 8px */
+.ed .pin .alist li{padding:12px;gap:4px;margin-bottom:8px;font-size:13px;}

@@ -3,7 +3,7 @@
 <title>UW08 제안서 작성 (편집기) - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="js/lucide.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=202611161608"><link rel="stylesheet" href="css/design.css?v=202611161608"></head>
+<link rel="stylesheet" href="css/style.css?v=202611161611"><link rel="stylesheet" href="css/design.css?v=202611161611"></head>
 <body data-screen="UW08">
 <div id="apphead"></div>
 <main>
@@ -65,11 +65,11 @@
  <div class="pin" data-tp="R" data-tk="ai" hidden><div class="chat">
    <div class="q">1등급 복구 시간 근거를 한 줄로 덧붙여 줘</div>
    <div class="a">표 아래에 한 줄 추가안이에요.<br><b>「RFP 요구 2시간 기준을 지키도록 원격 접속과 예비 부품을 미리 준비합니다.」</b><br><span class="muted">근거: SER-003</span>
-     <div style="display:flex;gap:4px;margin-top:6px"><button class="btn btn--sm btn--primary">적용</button><button class="btn btn--sm">다시</button><button class="btn btn--sm">적용 안 함</button></div></div></div>
-   <div class="chips" style="margin:10px 0"><span class="chip">쉬운 말로</span><span class="chip">줄이기</span><span class="chip">표로 바꾸기</span><button class="chip" onclick="PF.popT('tpl-diagram')">도식 만들기</button></div>
-   <div class="row" style="margin:0 0 6px"><label style="font-size:13px">다시 쓸 때 참고할 내 제안서</label><select aria-label="참고할 내 제안서"><option>2025_○○센터_제안서.pdf p.41~44 (목차 확인 때 연결)</option><option>참고 안 함</option><option>다른 파일 고르기…</option></select></div>
-   <textarea rows="2" placeholder="이 페이지에 요청할 내용" aria-label="AI 요청" style="width:100%"></textarea><button class="btn btn--sm btn--primary" style="margin-top:6px">보내기</button>
-   <p class="muted" style="font-size:12px">요청할 때 이 페이지 글만 보내요. RFP 파일은 보내지 않아요.</p></div>
+     <div class="bact"><button class="btn btn--sm btn--apply">적용</button><button class="btn btn--sm">다시</button><button class="btn btn--sm">적용 안 함</button></div></div></div>
+   <div class="chips aichips"><span class="chip">쉬운 말로</span><span class="chip">줄이기</span><span class="chip">표로 바꾸기</span><button class="chip" onclick="PF.popT('tpl-diagram')">도식 만들기</button></div>
+   <div class="row aisec"><label>다시 쓸 때 참고할 내 제안서</label><select aria-label="참고할 내 제안서"><option>2025_○○센터_제안서.pdf p.41~44 (목차 확인 때 연결)</option><option>참고 안 함</option><option>다른 파일 고르기…</option></select></div>
+   <textarea class="aiin" rows="2" placeholder="이 페이지에 요청할 내용" aria-label="AI 요청" style="width:100%"></textarea><button class="btn btn--sm btn--primary aisend">보내기</button>
+   <p class="muted ainote">요청할 때 이 페이지 글만 보내요. RFP 파일은 보내지 않아요.</p></div>
  <div class="pin" data-tp="R" data-tk="ev" hidden><p class="muted" style="margin-top:0">이 페이지를 만들 때 쓴 근거예요.</p><ul class="alist">
    <li><b>요구사항 SER-003</b><span class="muted">장애 등급별 복구 시간 (RFP p.42)</span></li><li><b>내 제안서</b><span class="muted">2025_○○센터_제안서.pdf p.41~44</span></li><li><b>발주기관 확인사항 K-01 (회신 없음)</b><span class="muted">작성 가정: 비상주 대기 1명, 1시간 안 원격 접속</span></li></ul></div>
  <div class="pin" data-tp="R" data-tk="al" hidden><ul class="alist">
@@ -102,7 +102,7 @@
   <h3 id="lmt">작업 현황</h3><p class="muted" style="margin:0 0 12px">절마다 계획 페이지 수와 지금 쓴 페이지 수, 상태를 보여 줘요.</p>
   <div class="tw" style="max-height:60vh;overflow:auto"><table id="sec-t"></table></div></div></div>
 </main>
-<script src="js/screens.js?v=202611161608"></script><script src="js/features.js?v=202611161608"></script><script src="js/data.js?v=202611161608"></script><script src="js/common.js?v=202611161608"></script>
+<script src="js/screens.js?v=202611161611"></script><script src="js/features.js?v=202611161611"></script><script src="js/data.js?v=202611161611"></script><script src="js/common.js?v=202611161611"></script>
 <script>
 
 const st = new URLSearchParams(location.search).get('state') || 'default';
