@@ -238,3 +238,26 @@ tbody tr:hover td{background:#FAFAFA;}
 input:focus,select:focus,textarea:focus{box-shadow:none;border-color:#C9C9C9;}
 .sch input:focus{box-shadow:none;border:0;outline:0;}
 .sch:focus-within{outline:0;box-shadow:none;}
+
+/* ---- UW01 작업 목록 (2026-11-16): 참고 화면(Framer 프로젝트 목록) 맞춤 ---- */
+/* 환영 영역: 모서리 16 → 11px, 3D 그림과 오른쪽 반쯤 잘린 원 삭제 */
+.welcome{border-radius:11px;}
+.welcome::after{display:none;}
+.welcome img{display:none;}
+/* 본문 바탕 흰색 */
+body[data-screen="UW01"],body[data-screen="UW01"] .shell,body[data-screen="UW01"] main{background:#FFFFFF;}
+/* 제목, 정렬, 새 작업: 제목 18px, 버튼은 상단 「화면 목록」「기능설명」과 같은 크기, 모서리, 여백 */
+.lhead{margin:8px 0 26px;}
+.lhead h1{font-size:18px;font-weight:600;color:#222222;}
+.lhead .btn,.lhead select{height:30px;padding:0 10px;font-size:var(--fs-12);border-radius:8px;box-shadow:none;line-height:30px;}
+.lhead .btn{gap:6px;}
+.lhead .btn svg{width:14px;height:14px;}
+.lhead select{background-color:#F2F2F2;border:0;color:#222222;padding-right:28px;}
+/* 카드: 모서리 8px, 옅은 회색 바탕 + 1px 선, 그림자 없음, 카드 사이 40px */
+.tgrid{gap:40px 40px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));}
+.tcard .tthumb{border:1px solid #EDEDED;border-radius:8px;background:#FAFAFA;box-shadow:none;}
+.tcard .tthumb:hover{border-color:#DDDDDD;box-shadow:none;transform:none;}
+/* 카드 아래 글자: 이름 14px #222, 보조 14px #999, 카드와 글자 사이 12px */
+.tmeta{margin-top:12px;}
+.tmeta .tx a{font-size:14px;font-weight:500;color:#222222;line-height:20px;}
+.tmeta .tx small{display:block;font-size:14px;color:#999999;line-height:20px;}
