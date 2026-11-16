@@ -512,3 +512,7 @@ body:not(:has(.ed)){background:#FFFFFF;}
 body:not(:has(.ed)) main,body:not(:has(.ed)) .main{background:#FFFFFF;}
 /* 흰 바탕 위 카드: 그림자 대신 옅은 테두리로 구분 */
 body:not(:has(.ed)) .card{border:1px solid #EEEEEE;box-shadow:none;}
+
+/* 아이콘만 있는 버튼 전체: 누르는 영역 30px, 아이콘 12px (되돌리기, 다시와 같음). 닫기(X), 크게 보기 포함 */
+button[aria-label="닫기"] svg,.modal .x svg,.jobnote .x svg,.drw-h #drw-size svg{width:12px;height:12px;}
+.drw-h #drw-size,.drw-h button[aria-label="닫기"]{width:30px;height:30px;}
