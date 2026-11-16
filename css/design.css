@@ -332,6 +332,6 @@ body[data-screen="UW01"],body[data-screen="UW01"] .shell,body[data-screen="UW01"
 .guide .gbtn .btn{margin-left:0 !important;}   /* 자동 간격(8px) 끄기 */
 .welcome{box-shadow:0 4px 12px -2px rgba(0,145,234,.35);}   /* 파란 배너 그림자: 파란 계열로 살짝 (2026-11-16) */
 
-/* 상단 우측 버튼: 오버 배경 좌우 여백 8px, 음수 바깥 여백으로 글자 간격 유지 */
-.guide .gbtn{padding:0 2px;}
-.guide .gbtn .btn{padding:0 8px;margin:0 -2px !important;}
+/* 상단 우측 버튼: 오버 배경 좌우 여백 8px, 버튼끼리 겹치지 않게 2px 띄움 */
+.guide .gbtn{padding:0;gap:2px;}
+.guide .gbtn .btn{padding:0 8px;margin:0 !important;}
