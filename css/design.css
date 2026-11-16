@@ -446,3 +446,10 @@ input[type=checkbox]:focus-visible{outline:2px solid #C9C9C9;outline-offset:1px;
 .pin .ainote{font-size:12px;line-height:1.6;margin:12px 0 0;}
 /* 근거, 알림 목록: 항목 안 줄 사이 4px, 항목 사이 8px */
 .ed .pin .alist li{padding:12px;gap:4px;margin-bottom:8px;font-size:13px;}
+
+/* 오른쪽 패널 안내문 (「이 페이지를 만들 때 쓴 근거예요.」 등): 흐린 글자 #999, 13px */
+.ed .pin > p.muted{font-size:13px;color:#999999;}
+/* 알림 목록 상태 표시: 바탕 없이 글자만. 오류 빨강 #E83131, 확인 필요, 경고 파랑 #0091EA */
+.ed .pin .alist .badge{align-self:flex-start;background:none;border:0;padding:0;border-radius:0;font-size:12px;font-weight:600;line-height:1.4;}
+.ed .pin .alist .badge--err{color:#E83131;}
+.ed .pin .alist .badge--check{color:#0091EA;}
