@@ -3,7 +3,7 @@
 <title>UW03 준비 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="js/lucide.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=202611161605"><link rel="stylesheet" href="css/design.css?v=202611161605"></head>
+<link rel="stylesheet" href="css/style.css?v=202611161608"><link rel="stylesheet" href="css/design.css?v=202611161608"></head>
 <body data-screen="UW03">
 <div id="apphead"></div>
 <main>
@@ -103,7 +103,7 @@
   <div class="acts"><a class="btn btn--primary" href="UW03.html?state=draft"><i data-lucide="sparkles"></i>이대로 초안 작성 시작</a><button class="btn" onclick="PF.drawer('toc', true)">목차 고치기</button><button class="btn" onclick="PF.tocUp('pick')"><i data-lucide="file-up"></i>목차 파일 올리기</button></div></div>
 </div></div>
 </main>
-<script src="js/screens.js?v=202611161605"></script><script src="js/features.js?v=202611161605"></script><script src="js/data.js?v=202611161605"></script><script src="js/common.js?v=202611161605"></script>
+<script src="js/screens.js?v=202611161608"></script><script src="js/features.js?v=202611161608"></script><script src="js/data.js?v=202611161608"></script><script src="js/common.js?v=202611161608"></script>
 <script>
 
 document.getElementById('ptree').innerHTML = TOC.map(([n, t, secs]) => `<li class="c">${n}. ${PF.esc(t)}</li>` + secs.map(([no, nm]) => `<li class="s"><span class="grow">${no} ${PF.esc(nm)}</span><span style="font-size:12px">0</span></li>`).join('')).join('');

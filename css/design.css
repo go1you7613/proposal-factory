@@ -418,3 +418,6 @@ input[type=checkbox]:focus-visible{outline:2px solid #C9C9C9;outline-offset:1px;
   *{scrollbar-width:thin;scrollbar-color:transparent transparent;}
   .sb-on{scrollbar-color:rgba(0,0,0,.18) transparent;}
 }
+
+/* 상단 안내 바: 「A 사용자 웹」과 i 아이콘 사이 12 → 6px */
+.guide .gtip{margin-left:-6px;}
