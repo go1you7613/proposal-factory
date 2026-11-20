@@ -3,7 +3,7 @@
 <title>UW01 작업 목록 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="js/lucide.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=202611161647"><link rel="stylesheet" href="css/design.css?v=202611161647"></head>
+<link rel="stylesheet" href="css/style.css?v=202611161647"><link rel="stylesheet" href="css/design.css?v=202611161647"><link rel="stylesheet" href="css/easy.css?v=202611171200"></head>
 <body data-screen="UW01">
 <div id="apphead"></div>
 <main>
@@ -19,16 +19,36 @@
   <img src="assets/3d/woman_office_worker_3d_default.png" alt=""></div>
 <div class="lhead"><h1 id="ltitle">전체</h1>
   <div class="r"><select id="lsort" aria-label="정렬"><option value="lv">최근 본 순</option><option value="due">마감 순</option><option value="name">이름 순</option></select>
-  <a class="btn btn--primary" href="UW02.html"><i data-lucide="plus"></i>새 작업</a></div></div>
+  <a class="btn btn--primary" href="UW12.html"><i data-lucide="plus"></i>새 작업</a></div></div>
 <div id="lgrid" class="tgrid"></div>
-<div data-state="empty"><div class="empty"><img class="hero3d" src="assets/3d/card_file_box_3d.png" alt=""><b>아직 작업이 없어요.</b><p class="muted">RFP 를 올리면 분석부터 시작해요.</p><a class="btn btn--primary" href="UW02.html"><i data-lucide="plus"></i>새 작업</a></div></div>
+<div data-state="empty"><div class="empty"><img class="hero3d" src="assets/3d/card_file_box_3d.png" alt=""><b>아직 작업이 없어요.</b><p class="muted">파일을 올리면 AI 가 초안까지 써 드려요.</p><a class="btn btn--primary" href="UW12.html"><i data-lucide="plus"></i>새 작업</a></div></div>
 <div data-state="nosearch"><div class="empty"><i data-lucide="search-x"></i><b>찾는 작업이 없어요.</b><p class="muted">「위성 관제」 검색 결과 0건</p></div></div>
 <div data-state="newfolder"><div class="modal-bg show" id="nf"><div class="modal app-modal" role="dialog" aria-modal="true" aria-labelledby="nft">
   <button class="x" aria-label="닫기" onclick="location.href='UW01.html'"><i data-lucide="x"></i></button>
   <h3 id="nft">새 폴더</h3><p class="muted nf-desc" style="margin-top:0">작업을 묶어 보는 목록 폴더예요. PC 작업 폴더와는 달라요. 한 단계만 만들 수 있어요.</p>
   <div class="row"><input id="nfn" class="nf-in" placeholder="폴더 이름" aria-label="폴더 이름"></div>
   <div class="nf-act"><a class="btn btn--primary" href="UW01.html?state=folder">만들기</a></div></div></div></div>
-<div data-state="default archive folder acctmenu cardmenu"></div>
+<!-- [퍼블리싱] 복사해서 새로 만들기 (2026-11-17). 카드 ··· 메뉴에서 연다
+     ① 복사 범위는 원고 전체 (확정). 원래 사업의 00. 자료실(이전 RFP)은 복사하지 않는다
+     ② 원고는 PC 에 있으므로 브라우저가 PC 의 01. 제안서/ 를 새 사업 폴더로 복사한다 (작업 폴더 연결 필요)
+     ③ 새 RFP, 공고서는 지금 또는 나중에 올린다. 올리면 AI 가 원래 사업과 비교해 「바꿀 곳」을 만든다 → 검사 결과 자료 창 「복사 변경」 -->
+<div data-state="copy"><div class="modal-bg show" id="cpm"><div class="modal app-modal" role="dialog" aria-modal="true" aria-labelledby="cpt" style="max-width:520px">
+  <button class="x" aria-label="닫기" onclick="location.href='UW01.html'"><i data-lucide="x"></i></button>
+  <h3 id="cpt">복사해서 새로 만들기</h3><p class="muted" style="margin-top:0">원고 전체를 새 작업으로 복사해요. 새 RFP 를 올리면 바꿀 곳을 찾아 드려요.</p>
+  <div class="cp-src"><i data-lucide="copy"></i><div><b>2027년 ○○정보시스템 운영 및 유지관리 (더미)</b><small>원본 · ○○청 · 13절 44페이지</small></div></div>
+  <div class="row"><label for="cpname">새 작업 이름</label><input id="cpname" placeholder="새 작업 이름 (나중에 바꿀 수 있어요)" value="2028년 ○○정보시스템 운영 및 유지관리 (복사)"></div>
+  <div class="row"><label>작성 업체</label><select aria-label="작성 업체"><option>샘플정보(주) (더미)</option><option>예시기술(주) (더미)</option></select></div>
+  <div class="row"><label>새 RFP, 공고서 <span class="muted" style="font-weight:400">선택 · 나중에 올려도 돼요</span></label>
+    <ul class="ez-files" style="margin:0"><li><i data-lucide="file-text"></i><span class="grow">2028_제안요청서.hwpx</span><span class="ez-type">RFP</span></li><li><i data-lucide="file-text"></i><span class="grow">2028_입찰공고문.pdf</span><span class="ez-type">공고서</span></li></ul>
+    <button class="btn btn--sm" style="margin-top:8px"><i data-lucide="file-up"></i>파일 고르기</button></div>
+  <p class="muted" style="font-size:12px;margin:0 0 12px">원래 사업의 RFP, 공고서(00. 자료실)는 복사하지 않아요. PC 작업 폴더에 새 사업 폴더를 만들어요.</p>
+  <div class="acts"><a class="btn" href="UW01.html">취소</a><a class="btn btn--primary" href="UW01.html?state=copying"><i data-lucide="copy"></i>복사하고 열기</a></div></div></div></div>
+<div data-state="copying"><div class="modal-bg show"><div class="modal app-modal" role="dialog" aria-modal="true" aria-label="복사 중" style="max-width:460px">
+  <h3>복사하고 있어요</h3><p class="muted" style="margin-top:0">끝나면 새 작업이 열리고 바꿀 곳을 보여 드려요.</p>
+  <ul class="cp-steps"><li class="ok"><i data-lucide="check"></i>새 사업 폴더 만들기</li><li class="ok"><i data-lucide="check"></i>원고 13절 44페이지 복사</li><li class="now"><i data-lucide="loader"></i>새 RFP 분석 (요구사항 49건)</li><li><i data-lucide="circle"></i>원래 사업과 비교해 바꿀 곳 찾기</li></ul>
+  <div class="bar" style="margin:14px 0 6px"><i style="width:60%"></i></div>
+  <p class="muted" style="font-size:12px;margin:0">(프로토타입) <a href="UW08.html?state=copied">복사 끝난 뒤 보기</a></p></div></div></div>
+<div data-state="default archive folder acctmenu cardmenu copy copying"></div>
 </main>
 <script src="js/screens.js?v=202611161647"></script><script src="js/features.js?v=202611161647"></script><script src="js/data.js?v=202611161647"></script><script src="js/common.js?v=202611161647"></script>
 <script>
@@ -67,6 +87,7 @@ function render() {
       <div class="tmeta"><div class="tx"><a href="UW08.html">${esc(p.name)}</a><small>최근 작업 ${p.last}</small></div>
         <button class="more" type="button" aria-label="작업 메뉴" onclick="this.closest('.tcard').classList.toggle('open');event.stopPropagation()"><i data-lucide="ellipsis"></i></button>
         <div class="cmenu" role="menu"><a href="UW08.html?state=info" role="menuitem"><i data-lucide="pencil"></i>정보 수정</a>
+          <a href="UW01.html?state=copy" role="menuitem"><i data-lucide="copy"></i>복사해서 새로 만들기</a>
           <a href="UW01.html?state=folder" role="menuitem"><i data-lucide="folder-input"></i>폴더로 이동</a>
           <a href="UW01.html${arc ? '' : '?state=archive'}" role="menuitem"><i data-lucide="${arc ? 'archive-restore' : 'archive'}"></i>${arc ? '꺼내기' : '보관하기'}</a></div></div></div>`;
   }).join('');

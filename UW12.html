@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=1280">
+<title>UW12 쉬운 작성 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="js/lucide.min.js"></script>
+<link rel="stylesheet" href="css/style.css?v=202611170800"><link rel="stylesheet" href="css/design.css?v=202611170800"><link rel="stylesheet" href="css/easy.css?v=202611171200"></head>
+<body data-screen="UW12">
+<div id="apphead"></div>
+<main>
+<!-- [퍼블리싱] 쉬운 작성 (2026-11-17, 쉬운 모드)
+     ① 「새 작업」의 기본 시작점 (B안). 아래 「직접 설정하며 시작」 = 어드밴스드 (UW02)
+     ② 파일을 한 번에 올리면 AI 가 분석 → 참여 확인 → 목차 → 초안을 기본값으로 진행
+     ③ 사용자가 정할 일만 대화창의 질문 카드로 묻는다. 「모름」은 「보류」로 표시하고 계속 진행
+     ④ 결과는 같은 화면 오른쪽 미리보기. 수정은 대화로. 「상세 편집으로 열기」 = UW08 (같은 원고)
+     ⑤ 기본값: 테마 기본 v2, 문서 서식 테마 기본, 목차 RFP 지정 목차, 참고할 내 제안서 AI 자동 맞춤 -->
+
+<!-- ① 시작: 파일 올리기 -->
+<div data-state="default"><div class="pick ez-start">
+  <img class="hero3d" src="assets/3d/writing_hand_3d_default.png" alt="">
+  <h1>파일을 올리면 제안서 초안을 만들어 드려요</h1>
+  <p class="sub">설정은 AI 가 알아서 해요. 정할 일이 생기면 대화로 물어볼게요. <b>샘플정보(주) (더미)</b> 기준으로 작성해요. <a href="UC03.html">업체 바꾸기</a></p>
+  <label class="ez-drop" for="ezf"><i data-lucide="upload"></i><b>RFP, 공고서, 일반현황 등을 여기에 끌어다 놓으세요</b><span>PDF, HWPX, DOCX, PPTX, 엑셀 · 여러 개 한 번에</span><input id="ezf" type="file" multiple hidden></label>
+  <!-- [퍼블리싱] 올린 파일 목록: AI 가 파일 종류를 자동으로 붙인다. 종류가 틀리면 칩을 눌러 바꾼다 -->
+  <ul class="ez-files">
+    <li><i data-lucide="file-text"></i><span class="grow">제안요청서_최종.hwpx</span><button class="ez-type">RFP<i data-lucide="chevron-down"></i></button><button class="btn btn--icon" aria-label="빼기"><i data-lucide="x"></i></button></li>
+    <li><i data-lucide="file-text"></i><span class="grow">입찰공고문.pdf</span><button class="ez-type">공고서<i data-lucide="chevron-down"></i></button><button class="btn btn--icon" aria-label="빼기"><i data-lucide="x"></i></button></li>
+    <li><i data-lucide="file-text"></i><span class="grow">과업지시서.hwpx</span><button class="ez-type">과업지시서<i data-lucide="chevron-down"></i></button><button class="btn btn--icon" aria-label="빼기"><i data-lucide="x"></i></button></li>
+    <li><i data-lucide="presentation"></i><span class="grow">샘플정보_일반현황.pptx</span><button class="ez-type">일반현황<i data-lucide="chevron-down"></i></button><button class="btn btn--icon" aria-label="빼기"><i data-lucide="x"></i></button></li></ul>
+  <div class="ez-go"><a class="btn btn--primary btn--lg" href="UW12.html?state=run"><i data-lucide="sparkles"></i>제안서 만들기 시작</a></div>
+  <p class="ez-adv">설정을 직접 하고 싶다면 <a href="UW02.html">직접 설정하며 시작 (어드밴스드)</a></p>
+</div></div>
+
+<!-- ② ~ ④ 작업: 왼쪽 대화 + 오른쪽 미리보기 -->
+<div data-state="run ask check done edit"><div class="ez">
+  <section class="ez-chat" aria-label="대화">
+    <div class="ez-hd"><div class="grow"><b>2027년 ○○정보시스템 운영 및 유지관리 (더미)</b><small>○○청 · D-17 · 샘플정보(주)</small></div>
+      <span class="ez-mode">쉬운 모드</span></div>
+    <div class="ez-log chat" id="ezlog">
+      <div class="ez-sys"><i data-lucide="check"></i>파일 4개를 읽었어요 (RFP, 공고서, 과업지시서, 일반현황)</div>
+      <div class="ez-sys"><i data-lucide="check"></i>RFP 분석: 요구사항 47건, 평가표 11항목(100점), 분량 50페이지</div>
+      <div class="ez-sys"><i data-lucide="check"></i>참여 확인: 충족 9, 확인 필요 3, 미충족 0</div>
+      <div class="ez-sys"><i data-lucide="check"></i>목차: RFP 지정 목차 그대로 4부 13절</div>
+      <div class="ez-sys"><i data-lucide="check"></i>참고할 내 제안서 3개를 절에 맞췄어요</div>
+
+      <!-- run: 진행 중 -->
+      <div data-state="run"><div class="ez-run"><div class="ez-run-t"><i data-lucide="loader"></i>3.3 장애 대응을 쓰고 있어요<span class="muted">5 / 13절 · 약 11분 남음</span></div><div class="bar"><i style="width:38%"></i></div>
+        <p class="muted">창을 닫아도 계속 써요. 질문이 생기면 여기서 물어볼게요.</p></div></div>
+
+      <!-- ask: 질문 카드 (작성 중 생긴 결정) -->
+      <div data-state="ask"><div class="a ez-q"><div class="ez-qn">질문 1 / 3 · 업체 확인</div>
+        <b>야간 운영 지원 인력은 상주인가요?</b><p>RFP SER-004 가 야간 지원을 요구해요. 일반현황에는 정보가 없어요.</p>
+        <div class="ez-opts"><button class="btn btn--sm">상주 1명</button><button class="btn btn--sm">비상주 대기 (1시간 안 원격 접속)</button><button class="btn btn--sm">모름 (보류로 두고 계속)</button></div>
+        <p class="ez-hint">고른 답은 3.3 장애 대응에 바로 반영해요. 나중에 바꿀 수 있어요.</p></div>
+        <div class="ez-run sm"><div class="ez-run-t"><i data-lucide="pause"></i>답을 기다리는 동안 다른 절을 계속 써요<span class="muted">6 / 13절</span></div><div class="bar"><i style="width:46%"></i></div></div></div>
+
+      <!-- check: 출력 전 검사 질문 -->
+      <div data-state="check"><div class="ez-sys"><i data-lucide="check"></i>13절 44페이지를 다 썼어요. 검사를 했어요 (오류 2, 경고 5)</div>
+        <div class="a ez-q"><div class="ez-qn">질문 1 / 2 · 검사 오류</div>
+        <b>복구 시간이 두 곳에서 달라요. 어느 값으로 맞출까요?</b><p>3.3 장애 대응은 「2시간」, 3.1 유지관리 체계는 「3시간」이에요. RFP 기준은 1등급 2시간이에요.</p>
+        <div class="ez-opts"><button class="btn btn--sm">2시간으로 맞추기 (RFP 기준)</button><button class="btn btn--sm">3시간으로 맞추기</button><button class="btn btn--sm">그 자리 보기</button></div></div>
+        <p class="ez-hint">경고 5건은 AI 가 고쳤어요. 오류는 답을 받아야 고칠 수 있어요.</p></div>
+
+      <!-- done / edit: 완료 후 대화로 수정 -->
+      <div data-state="done edit"><div class="ez-sys"><i data-lucide="check"></i>질문 3개에 답을 반영했어요 (보류 1건)</div>
+        <div class="a ez-done"><b>제안서 초안이 완성됐어요</b><p>13절 44페이지 / 한도 50페이지 · 검사 오류 0 · 보류 1곳(야간 인력 수)</p>
+          <div class="ez-opts"><a class="btn btn--sm btn--primary" href="UW11.html"><i data-lucide="file-output"></i>PDF 출력</a><a class="btn btn--sm" href="UW08.html"><i data-lucide="pencil-ruler"></i>상세 편집으로 열기</a></div></div></div>
+      <div data-state="edit"><div class="q">3.2 예방 점검을 표로 바꿔줘</div>
+        <div class="a">3.2 2페이지의 점검 주기 목록을 표(주기, 대상, 방법)로 바꿨어요. 오른쪽에서 확인해 주세요.
+          <div class="bact"><button class="btn btn--apply">적용</button><button class="btn">다시</button><button class="btn">적용 안 함</button></div></div></div>
+    </div>
+    <!-- [퍼블리싱] 입력: 작성 중에는 질문 답, 완료 후에는 수정 요청. 빠른 요청 칩은 완료 후에만 -->
+    <div class="ez-in">
+      <div class="chips" data-state="done edit"><span class="chip">쉬운 말로</span><span class="chip">분량 줄이기</span><span class="chip">표로 바꾸기</span><span class="chip">도식 넣기</span></div>
+      <div class="ez-box"><textarea rows="2" placeholder="답하거나 고칠 내용을 적어 주세요" aria-label="메시지"></textarea><button class="btn btn--primary btn--icon" aria-label="보내기"><i data-lucide="arrow-up"></i></button></div></div>
+  </section>
+
+  <!-- 오른쪽 미리보기: 다 쓴 페이지부터 채워진다. 누르면 그 페이지에 대해 묻기 -->
+  <section class="ez-pv" aria-label="미리보기">
+    <div class="ez-pvh"><b>미리보기</b><span class="muted" id="ezcnt"></span><span class="grow"></span>
+      <a class="btn btn--sm" href="UW08.html"><i data-lucide="pencil-ruler"></i>상세 편집으로 열기</a></div>
+    <div class="ez-pages" id="ezpages"></div>
+  </section>
+</div></div>
+</main>
+<script src="js/screens.js?v=202611170800"></script><script src="js/features.js?v=202611170800"></script><script src="js/data.js?v=202611170800"></script><script src="js/common.js?v=202611170800"></script>
+<script>
+const st = new URLSearchParams(location.search).get('state') || 'default';
+// 미리보기 더미: 상태에 따라 다 쓴 페이지 수가 다르다
+const PAGES = [['Ⅰ. 일반부문','1.1 제안 개요','사업 이해와 제안 목표'],['Ⅰ. 일반부문','1.2 제안사 일반현황','회사 개요와 수행 실적'],['Ⅱ. 사업관리부문','2.1 추진 전략','3단계 추진 전략'],['Ⅱ. 사업관리부문','2.2 사업수행 조직','조직과 투입 인력'],['Ⅲ. 사업수행부문','3.1 유지관리 체계','유지관리 지원 체계'],['Ⅲ. 사업수행부문','3.2 예방 점검','주기별 예방 점검'],['Ⅲ. 사업수행부문','3.3 장애 대응','장애 등급별 신속 복구'],['Ⅲ. 사업수행부문','3.3 장애 대응 · A3 가로','장애 처리 흐름','a3'],['Ⅲ. 사업수행부문','3.4 시스템 운영','운영 지원과 보고'],['Ⅳ. 기술부문','4.1 프로젝트 관리','일정, 위험, 품질 관리']];
+const done = {run: 4, ask: 5}[st] ?? PAGES.length;
+document.getElementById('ezcnt') && (document.getElementById('ezcnt').textContent = (done < PAGES.length ? `${done * 4} 페이지 작성됨 · 쓰는 중` : '44페이지'));
+const el = document.getElementById('ezpages');
+if (el) el.innerHTML = PAGES.map(([c, s, t, a3], i) => {
+  const ok = i < done, now = i === done;
+  const hold = ok && !a3 && s.startsWith('3.3') && st !== 'edit';
+  const hl = st === 'edit' && s.startsWith('3.2');
+  // A3 가로 페이지 (2026-11-17): 미리보기에서 2칸을 차지하고 가로 비율로 보인다
+  if (a3 && ok) return `<div class="ez-pg a3"><div class="band"><small>${c}</small><b>${t}</b></div><div class="body"><div class="lanes">${'<i class="h"></i><i></i><i></i><i></i><i></i>'.repeat(3)}</div></div><div class="ft">${s}</div></div>`;
+  return `<div class="ez-pg${ok ? '' : ' wait'}${a3 ? ' a3' : ''}${now ? ' now' : ''}${hl ? ' hl' : ''}"><div class="band"><small>${c}</small><b>${ok ? t : ''}</b></div>
+    <div class="body">${ok ? (hl ? '<div class="tbl"><i></i><i></i><i></i><i></i><i></i><i></i></div>' : '<i style="width:92%"></i><i style="width:76%"></i><i style="width:84%"></i><div class="box"></div><i style="width:66%"></i>')
+      + (hold ? '<span class="hold">보류: 야간 인력 수</span>' : '') : (now ? '<span class="writing"><i data-lucide="loader"></i>쓰는 중</span>' : '')}</div>
+    <div class="ft">${s}</div></div>`;
+}).join('');
+PF.icons();
+</script>
+</body></html>

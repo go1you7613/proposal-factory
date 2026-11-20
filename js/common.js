@@ -79,6 +79,8 @@
     document.querySelectorAll(`[data-tp="${group}"]`).forEach(p => p.hidden = p.dataset.tk !== key);
   };
 
+  // 보기 배율 (2026-11-17): A3 가로 페이지에서 「맞춤」(작업 영역 폭) ↔ 「100%」(A4 와 같은 배율) 전환
+  PF.zoom = (btn, z) => { btn.parentNode.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn)); document.getElementById('stage').classList.toggle('z100', z === '100'); };
   // 자료 창: 오른쪽에서 밀려 나오는 넓은 창 (제안서 작성 화면). key = PANELS 의 state 이름, 'out' = PDF 출력
   PF.drawer = (key, big = false, state = '') => {
     let bg = $('#drw-bg'), d = $('#drw');

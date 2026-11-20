@@ -3,7 +3,7 @@
 <title>UW08 제안서 작성 (편집기) - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="js/lucide.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=202611161647"><link rel="stylesheet" href="css/design.css?v=202611161647"></head>
+<link rel="stylesheet" href="css/style.css?v=202611171200"><link rel="stylesheet" href="css/design.css?v=202611171200"><link rel="stylesheet" href="css/easy.css?v=202611171200"></head>
 <body data-screen="UW08">
 <div id="apphead"></div>
 <main>
@@ -13,15 +13,15 @@
   <p style="margin:0 0 6px">작업 폴더 권한이 끝나서 PC 에 저장하지 못했어요.</p>
   <p class="muted" style="margin:0;font-size:14px">바뀐 내용은 브라우저에 임시로 남아 있어요. 권한을 다시 허용하면 바로 저장해요.</p>
   <div class="acts"><button class="btn" onclick="PF.pop(null)">나중에</button><button class="btn btn--primary" onclick="PF.pop(null);PF.toast('PC 에 저장했어요')"><i data-lucide="shield-check"></i>권한 다시 허용</button></div></template>
-<div data-state="default empty ai diagram image alert overflow saveerr rfp toc ask check info out jobdone drafting draftdone list fmt fmtrun fmtres">
+<div data-state="default empty a3 ai diagram image alert overflow saveerr rfp toc ask check info out jobdone drafting draftdone list fmt fmtrun fmtres">
 <div class="edwrap"><div class="ed">
 <nav class="vrail" aria-label="자료"><!-- [퍼블리싱] 유틸바 (2026-11-15): 작업창 맨 왼쪽 세로 막대. 누르면 자료 창이 오른쪽에서 밀려 나온다 --><button data-k="toc" onclick="PF.drawer('toc')"><i data-lucide="list-tree"></i>목차</button><button data-k="rfp" onclick="PF.drawer('rfp')"><i data-lucide="file-search"></i>RFP 분석</button><button data-k="ask" onclick="PF.drawer('ask')"><i data-lucide="building-2"></i>업체 확인사항<span class="n">2</span></button><button data-k="check" onclick="PF.drawer('check')"><i data-lucide="shield-check"></i>검사 결과<span class="n">4</span></button><button data-k="info" onclick="PF.drawer('info')"><i data-lucide="info"></i>사업 정보</button></nav>
 
 <div class="pane"><!-- [퍼블리싱] 사업 머리 (2026-11-15): 사업명 ▾ 메뉴 + 발주처, D-day, 작성 업체. common.js PF.editorBars 가 채움 --><div class="projhd" id="projhd"></div><div class="ptabs"><button data-tg="L" data-tk="pg" class="on" onclick="PF.tab('L','pg')">페이지</button><button data-tg="L" data-tk="tp" onclick="PF.tab('L','tp')">템플릿</button><button data-tg="L" data-tk="as" onclick="PF.tab('L','as')">에셋</button></div>
  <div class="pin" data-tp="L" data-tk="pg"><ul class="ptree" id="ptree"></ul></div>
- <div class="pin" data-tp="L" data-tk="tp" hidden><p class="muted" style="margin-top:0">페이지에 끌어 놓으면 페이지 틀이 바뀌어요. 글은 유지돼요.</p><div class="tpl">
+ <div class="pin" data-tp="L" data-tk="tp" hidden><p class="muted" style="margin-top:0">페이지에 끌어 놓으면 페이지 틀이 바뀌어요. 글은 유지돼요. <b>A3</b> 표시 템플릿은 A3 가로 페이지로 만들어요.</p><div class="tpl">
    <div><i class="sk"></i>표준</div><div><i class="sk"></i>2단</div><div><i class="sk"></i>표 중심</div><div><i class="sk"></i>단계 흐름</div><div><i class="sk"></i>비교</div><div><i class="sk"></i>조직도</div>
-   <div><i class="sk"></i>카드 3열</div><div><i class="sk"></i>일정표</div><div><i class="sk"></i>스윔레인</div><div><i class="sk"></i>결론 바</div><div><i class="sk"></i>체계도</div><div><i class="sk"></i>이미지 중심</div></div>
+   <div><i class="sk"></i>카드 3열</div><div><i class="sk"></i>일정표 <span class="a3t">A3</span></div><div><i class="sk"></i>스윔레인 <span class="a3t">A3</span></div><div><i class="sk"></i>결론 바</div><div><i class="sk"></i>체계도 <span class="a3t">A3</span></div><div><i class="sk"></i>이미지 중심</div></div>
    <h3 style="font-size:14px;margin:14px 0 4px">부품</h3><p class="muted" style="margin:0;font-size:13px">허용 구역에만 놓을 수 있어요.</p>
    <div class="parts"><div><i data-lucide="table"></i>표</div><div><i data-lucide="list-ordered"></i>번호 목록</div><div><i data-lucide="workflow"></i>단계 흐름</div><div><i data-lucide="image"></i>이미지 (전체, 1/2, 1/3)</div><div><i data-lucide="quote"></i>결론 바</div></div></div>
  <div class="pin" data-tp="L" data-tk="as" hidden><p class="muted" style="margin-top:0">PC <b>업체자료/</b> 와 이 사업 <b>01. 제안서/img/</b> 의 그림이에요.</p><div class="assets">
@@ -29,9 +29,9 @@
    <button class="btn btn--sm" style="margin-top:10px;width:100%"><i data-lucide="folder-open"></i>PC 에서 그림 고르기</button></div>
 </div>
 <div class="canvas"><div class="tool"><button class="btn btn--sm btn--ghost" aria-label="되돌리기"><i data-lucide="undo-2"></i></button><button class="btn btn--sm btn--ghost" aria-label="다시"><i data-lucide="redo-2"></i></button>
-  <span class="muted">|</span><b>3.3 장애 대응</b><span class="muted">2 / 6페이지</span><span class="grow"></span>
+  <span class="muted">|</span><b>3.3 장애 대응</b><span class="muted" id="pgno">2 / 6페이지</span><span class="grow"></span>
   <span class="save"><i data-lucide="check"></i>PC 저장됨 10:42</span><button class="btn btn--sm">미리보기</button><button class="btn btn--sm" onclick="PF.modal('listmodal')"><i data-lucide="list-checks"></i>작업 현황 보기</button><button class="btn btn--sm btn--primary" onclick="PF.drawer('out')"><i data-lucide="file-output"></i>PDF 출력</button></div>
- <div class="stage"><div data-state="default ai diagram image alert overflow saveerr rfp toc ask check info out jobdone drafting draftdone list fmt fmtrun fmtres">
+ <div class="stage" id="stage"><div data-state="default ai diagram image alert overflow saveerr rfp toc ask check info out jobdone drafting draftdone list fmt fmtrun fmtres">
 <div class="a4" id="a4">
  <div class="band"><div class="bz"><span>Ⅲ. 사업수행부문</span><span>3.3 장애 대응</span></div><h4 contenteditable="true">장애 등급별 신속 복구 체계</h4><p contenteditable="true">장애를 4등급으로 나누고 등급마다 복구 시간을 약속합니다.</p></div>
  <div class="sbar">3.3.1 장애 등급과 복구 시간</div>
@@ -46,14 +46,26 @@
  </div>
  <div class="foot">- 27 -</div>
  <div data-state="overflow"><div class="over">페이지 넘침: 아래로 6줄 넘쳤어요 (페이지 나누기 또는 줄이기)</div></div>
-</div></div><div data-state="empty">
+</div></div><div data-state="a3"><!-- [퍼블리싱] A3 가로 페이지 (2026-11-17): 크기 1588×1123 (A4 의 2배 폭). 기본은 「맞춤」 = 작업 영역 폭에 맞춰 줄여 보임. 「100%」 = A4 와 같은 배율 (가로 스크롤). 순서도, 일정표처럼 넓은 장표만 A3 로 만든다 -->
+<div class="a3wrap"><div class="a3bar"><span class="a3t">A3 가로</span><span class="muted">1588×1123 · 2쪽으로 셈</span><span class="grow"></span><span class="zoom" role="group" aria-label="보기 배율"><!-- [퍼블리싱] A3 페이지 위 오른쪽. 맞춤 = 작업 영역 폭에 맞춤 (기본), 100% = 원래 배율 --><button class="on" onclick="PF.zoom(this,'fit')">맞춤</button><button onclick="PF.zoom(this,'100')">100%</button></span></div>
+<div class="a4 a3" id="a3pg">
+ <div class="band"><div class="bz"><span>Ⅲ. 사업수행부문</span><span>3.3 장애 대응</span></div><h4 contenteditable="true">장애 처리 흐름과 단계별 책임</h4><p contenteditable="true">접수부터 종료 보고까지 누가 무엇을 하는지 한 장에 보여 드립니다.</p></div>
+ <div class="sbar">3.3.3 장애 처리 흐름 (스윔레인)</div>
+ <div class="cnt"><div class="lane">
+  <b>발주기관</b><div><i>장애 신고</i></div><div></div><div></div><div><i>결과 확인</i></div>
+  <b>PM</b><div></div><div><i>등급 판정</i></div><div><i>보고</i></div><div><i>종료 보고</i></div>
+  <b>운영팀</b><div><i>접수</i></div><div><i>원인 분석</i></div><div><i>조치, 복구</i></div><div><i>재발 방지</i></div>
+ </div></div>
+ <div class="foot">- 29 -</div>
+</div></div></div>
+<div data-state="empty">
 <div class="a4"><div class="band"><div class="bz"><span>Ⅲ. 사업수행부문</span><span>3.4 시스템 운영</span></div><h4>(제목 없음)</h4><p>(요약 없음)</p></div><div class="sbar">3.4.1</div>
  <div class="cnt" style="align-items:center;justify-content:center;text-align:center"><i data-lucide="file-plus-2"></i><b>빈 페이지예요.</b><p class="muted">연결 요구사항 SER-004 · 계획 4페이지 · 참고 내 제안서 없음</p>
   <button class="btn btn--primary"><i data-lucide="sparkles"></i>AI 초안 만들기 (4페이지)</button><button class="btn btn--sm">템플릿 먼저 고르기</button></div><div class="foot">- 31 -</div></div></div></div>
  <div class="dock" id="dock"><!-- [퍼블리싱] 아래 바 (2026-11-15): 단계(준비 > 제안서 작성 > 마무리), 작업 알림, 검사, PDF 출력. common.js PF.editorBars 가 채움 --></div></div>
 
 <div class="pane"><div class="ptabs"><button data-tg="R" data-tk="pr" class="on" onclick="PF.tab('R','pr')">속성</button><button data-tg="R" data-tk="ai" onclick="PF.tab('R','ai')">AI</button><button data-tg="R" data-tk="ev" onclick="PF.tab('R','ev')">근거</button><button data-tg="R" data-tk="al" onclick="PF.tab('R','al')">알림 <b>3</b></button></div>
- <div class="pin" data-tp="R" data-tk="pr"><b>선택: 표 칸</b><dl class="kv2" style="margin-top:8px"><dt>페이지</dt><dd>3.3 · 2/6 (표 중심)</dd><dt>구역</dt><dd>본문 (부품 허용)</dd><dt>글자</dt><dd>표 글자 9.5pt 보통 <a href="#" onclick="PF.fmt('edit','editor');return false">문서 서식</a></dd><dt>요구사항</dt><dd>SER-002, SER-003</dd><dt>평가 요소</dt><dd>장애 대응</dd></dl>
+ <div class="pin" data-tp="R" data-tk="pr"><b>선택: 표 칸</b><dl class="kv2" style="margin-top:8px"><dt>페이지</dt><dd>3.3 · 2/6 (표 중심)</dd><dt>용지</dt><dd><select id="paper" aria-label="용지" onchange="PF.toast(this.value==='a3'?'A3 가로로 바꿨어요. 글이 넓은 틀에 맞게 다시 놓여요':'A4 세로로 바꿨어요')"><option value="a4">A4 세로</option><option value="a3">A3 가로 (2쪽으로 셈)</option></select></dd><dt>구역</dt><dd>본문 (부품 허용)</dd><dt>글자</dt><dd>표 글자 9.5pt 보통 <a href="#" onclick="PF.fmt('edit','editor');return false">문서 서식</a></dd><dt>요구사항</dt><dd>SER-002, SER-003</dd><dt>평가 요소</dt><dd>장애 대응</dd></dl>
    <!-- [퍼블리싱] 속성 탭 (기능정의서 UW08-07, UW08-23): 원고에서 누른 요소의 속성. 아무것도 안 고르면 지금 페이지. 요소 종류마다 아래 「바꿀 수 있는 것」이 달라진다 -->
    <h3 class="psec">표 칸 <span class="muted" style="font-weight:400">2행 · 3열</span></h3>
    <div style="display:flex;flex-wrap:wrap;gap:6px"><button class="btn btn--sm" aria-pressed="false"><i data-lucide="bold"></i>강조</button><button class="btn btn--sm"><i data-lucide="between-horizontal-end"></i>행 추가</button><button class="btn btn--sm"><i data-lucide="trash-2"></i>행 삭제</button></div>
@@ -102,20 +114,26 @@
   <h3 id="lmt">작업 현황</h3><p class="muted" style="margin:0 0 12px">절마다 계획 페이지 수와 지금 쓴 페이지 수, 상태를 보여 줘요.</p>
   <div class="tw" style="max-height:60vh;overflow:auto"><table id="sec-t"></table></div></div></div>
 </main>
-<script src="js/screens.js?v=202611161647"></script><script src="js/features.js?v=202611161647"></script><script src="js/data.js?v=202611161647"></script><script src="js/common.js?v=202611161647"></script>
+<script src="js/screens.js?v=202611171200"></script><script src="js/features.js?v=202611171200"></script><script src="js/data.js?v=202611171200"></script><script src="js/common.js?v=202611171200"></script>
 <script>
 
 const st = new URLSearchParams(location.search).get('state') || 'default';
 const cur = st === 'empty' ? '3.4' : '3.3';
 document.getElementById('ptree').innerHTML = TOC.map(([n, t, secs]) => `<li class="c">${n}. ${PF.esc(t)}</li>` + secs.map(([no, nm, p, c, s]) =>
   `<li class="s ${no === cur ? 'on' : ''}"><span class="grow">${no} ${PF.esc(nm)}</span><span style="font-size:12px">${c}/${p}</span></li>` +
-  (no === cur ? Array.from({length: Math.max(c, 1)}, (_, i) => `<li class="p"><i data-lucide="file"></i><span class="grow">${i + 1}페이지</span></li>`).join('') : '')).join('')).join('');
+  (no === cur ? Array.from({length: Math.max(c, 1)}, (_, i) => `<li class="p${(st === 'a3' ? i === 3 : i === 1) && cur === '3.3' ? ' on' : ''}"><i data-lucide="${i === 3 && cur === '3.3' ? 'rectangle-horizontal' : 'file'}"></i><span class="grow">${i + 1}페이지</span>${i === 3 && cur === '3.3' ? '<span class="a3t">A3</span>' : ''}</li>`).join('') : '')).join('')).join('');
 PF.icons();
 document.getElementById('sec-t').innerHTML = '<tr><th>절</th><th class="r">계획</th><th class="r">현재</th><th>상태</th><th></th></tr>' + TOC.flatMap(c => c[2]).map(([no, nm, p, c, s]) =>
   `<tr><td>${no} ${PF.esc(nm)}</td><td class="r">${p}</td><td class="r">${c}</td><td>${PF.st(s)}</td><td><a class="btn btn--sm" href="UW08.html${s === '빈 페이지' ? '?state=empty' : ''}">열기</a></td></tr>`).join('');
 const tab = {ai: ['R', 'ai'], alert: ['R', 'al'], image: ['L', 'as']}[st]; if (tab) PF.tab(...tab);
 if (['rfp', 'toc', 'ask', 'check', 'info', 'out'].includes(st)) PF.drawer(st, st === 'toc');
 if (st === 'list') PF.modal('listmodal');
+// 복사 직후 (2026-11-17): 검사 결과 자료 창을 「복사 변경」으로 열고 안내
+if (st === 'copied') { PF.drawer('check', true, 'copy'); PF.toast('복사했어요. 바꿀 곳 14곳을 찾았어요'); }
+// A3 페이지 (2026-11-17): 3.3 의 4페이지가 A3 가로. 속성 탭 용지 값과 페이지 번호를 맞춘다
+if (st === 'a3') { document.getElementById('pgno').textContent = '4 / 6페이지'; document.getElementById('paper').value = 'a3';
+  const pr = document.querySelector('.pin[data-tk="pr"]'); pr.querySelector('b').textContent = '선택: 페이지';
+  pr.querySelector('.kv2 dd').textContent = '3.3 · 4/6 (스윔레인)'; [...pr.children].forEach(e => { if (e.matches('h3,div,label')) e.style.display = 'none'; }); }
 if (st === 'saveerr') { const sv = document.querySelector('.canvas .save'); sv.classList.add('err'); sv.innerHTML = '<i data-lucide="alert-triangle"></i>저장 안 됨'; PF.icons(); }
 if (st === 'fmt') PF.fmt('edit', 'editor'); if (st === 'fmtrun') PF.fmt('running', 'editor'); if (st === 'fmtres') PF.fmt('result', 'editor');
 

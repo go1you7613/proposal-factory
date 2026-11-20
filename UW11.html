@@ -3,7 +3,7 @@
 <title>UW11 출력 - 제안공방</title><link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="js/lucide.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=202611161647"><link rel="stylesheet" href="css/design.css?v=202611161647"></head>
+<link rel="stylesheet" href="css/style.css?v=202611171200"><link rel="stylesheet" href="css/design.css?v=202611171200"></head>
 <body data-screen="UW11">
 <div id="apphead"></div>
 <main>
@@ -11,18 +11,18 @@
 <div class="split"><div><h1>PDF 출력</h1><p class="sub" style="margin:0">PDF 는 PC 출력 폴더에 저장해요. 서버에는 남기지 않아요.</p></div></div>
 <div data-state="test"></div><template data-pop="test" data-w="460"><h3 class="pop-ic"><i data-lucide="alert-triangle"></i>시험 출력만 할 수 있어요</h3><p style="margin:0">검사 오류가 4건 남아 있어요.</p><p class="muted" style="margin:4px 0 0;font-size:14px">시험 출력은 페이지마다 「시험」 표시가 들어가요.</p>
   <div class="acts"><button class="btn" onclick="PF.pop(null)">닫기</button><a class="btn btn--primary" href="UW09.html" onclick="PF.pop(null)">검사로</a></div></template>
-<div data-state="running"><div class="card"><b>PDF 만드는 중 (31/50페이지)</b><div class="bar" style="margin:10px 0"><i style="width:62%"></i></div><span class="muted">페이지마다 A4 794×1123px 규격으로 찍어요.</span></div></div>
-<div data-state="done"></div><template data-pop="done" data-w="480"><h3 class="pop-ic"><i data-lucide="check-circle-2"></i>PDF 를 만들었어요</h3><p style="margin:0"><b>출력/제안서_v3_20261110.pdf</b></p><p class="muted" style="margin:4px 0 0;font-size:14px">50페이지, 18.4MB · PC 출력 폴더에 저장했어요.</p>
+<div data-state="running"><div class="card"><b>PDF 만드는 중 (31/50페이지)</b><div class="bar" style="margin:10px 0"><i style="width:62%"></i></div><span class="muted">A4 세로는 794×1123, A3 가로는 1588×1123 크기 그대로 찍고 한 파일로 합쳐요.</span></div></div>
+<div data-state="done"></div><template data-pop="done" data-w="480"><h3 class="pop-ic"><i data-lucide="check-circle-2"></i>PDF 를 만들었어요</h3><p style="margin:0"><b>출력/제안서_v3_20261110.pdf</b></p><p class="muted" style="margin:4px 0 0;font-size:14px">50페이지 (A3 가로 2장 포함), 18.4MB · PC 출력 폴더에 저장했어요.</p>
   <div class="acts"><button class="btn" onclick="PF.pop(null)">닫기</button><button class="btn btn--primary" onclick="PF.pop(null)"><i data-lucide="folder-open"></i>출력 폴더 열기</button></div></template>
 <div>
   <!-- [퍼블리싱] 제출 체크리스트, 출력 이력 카드 삭제 (2026-11-15) -->
   <div class="card"><h2>출력 전 확인</h2><ul class="steps">
-    <li><span class="badge badge--solid">완료</span><span>목차 13절 모두 작성</span></li><li id="c-err"></li><li><span class="badge badge--solid">완료</span><span>본문 50페이지 (한도 50페이지)</span></li><li><span class="badge badge--check">확인 필요</span><span>업체 확인사항 미확보 2건 (보류 표시 남음)</span></li><li><span class="badge badge--solid">완료</span><span>표지, 목차, 간지 생성</span></li></ul>
+    <li><span class="badge badge--solid">완료</span><span>목차 13절 모두 작성</span></li><li id="c-err"></li><li><span class="badge badge--solid">완료</span><span>본문 50페이지 (한도 50페이지, A3 가로 2장 = 4쪽 포함)</span></li><li><span class="badge badge--check">확인 필요</span><span>업체 확인사항 미확보 2건 (보류 표시 남음)</span></li><li><span class="badge badge--solid">완료</span><span>표지, 목차, 간지 생성</span></li></ul>
     <div style="margin-top:12px;display:flex;gap:8px"><a class="btn" href="UW11.html?state=test">시험 출력</a><a class="btn btn--primary" href="UW11.html?state=running"><i data-lucide="file-output"></i>제출용 PDF 만들기</a></div></div>
 </div>
 <div data-state="default test running done"></div>
 </main>
-<script src="js/screens.js?v=202611161647"></script><script src="js/features.js?v=202611161647"></script><script src="js/data.js?v=202611161647"></script><script src="js/common.js?v=202611161647"></script>
+<script src="js/screens.js?v=202611171200"></script><script src="js/features.js?v=202611171200"></script><script src="js/data.js?v=202611171200"></script><script src="js/common.js?v=202611171200"></script>
 <script>
 
 const st = new URLSearchParams(location.search).get('state');
